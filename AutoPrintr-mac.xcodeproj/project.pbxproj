@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A64428E91D74A0130054CFE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A64428E81D74A0130054CFE0 /* AppDelegate.m */; };
+		A64428EC1D74A0130054CFE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A64428EB1D74A0130054CFE0 /* main.m */; };
+		A64428EE1D74A0130054CFE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A64428ED1D74A0130054CFE0 /* Assets.xcassets */; };
+		A64428F11D74A0140054CFE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64428EF1D74A0140054CFE0 /* MainMenu.xib */; };
+		A6C192B31D74B4A300D28CE7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C192B11D74B4A300D28CE7 /* LoginViewController.m */; };
+		A6C192B41D74B4A300D28CE7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A64428E41D74A0130054CFE0 /* AutoPrintr-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AutoPrintr-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A64428E71D74A0130054CFE0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A64428E81D74A0130054CFE0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A64428EB1D74A0130054CFE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A64428ED1D74A0130054CFE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A64428F01D74A0140054CFE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A64428F21D74A0140054CFE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6C192B01D74B4A300D28CE7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
+		A6C192B11D74B4A300D28CE7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
+		A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Controllers/LoginViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A64428E11D74A0130054CFE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A64428DB1D74A0130054CFE0 = {
+			isa = PBXGroup;
+			children = (
+				A64428E61D74A0130054CFE0 /* AutoPrintr-mac */,
+				A64428E51D74A0130054CFE0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A64428E51D74A0130054CFE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A64428E41D74A0130054CFE0 /* AutoPrintr-mac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A64428E61D74A0130054CFE0 /* AutoPrintr-mac */ = {
+			isa = PBXGroup;
+			children = (
+				A6C192AF1D74B48400D28CE7 /* Controllers */,
+				A64428E71D74A0130054CFE0 /* AppDelegate.h */,
+				A64428E81D74A0130054CFE0 /* AppDelegate.m */,
+				A64428ED1D74A0130054CFE0 /* Assets.xcassets */,
+				A64428EF1D74A0140054CFE0 /* MainMenu.xib */,
+				A64428F21D74A0140054CFE0 /* Info.plist */,
+				A6C192AA1D74AA7600D28CE7 /* Resources */,
+				A64428EA1D74A0130054CFE0 /* Supporting Files */,
+			);
+			path = "AutoPrintr-mac";
+			sourceTree = "<group>";
+		};
+		A64428EA1D74A0130054CFE0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A64428EB1D74A0130054CFE0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6C192AA1D74AA7600D28CE7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A6C192AF1D74B48400D28CE7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6C192B01D74B4A300D28CE7 /* LoginViewController.h */,
+				A6C192B11D74B4A300D28CE7 /* LoginViewController.m */,
+				A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A64428E31D74A0130054CFE0 /* AutoPrintr-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A64428F51D74A0140054CFE0 /* Build configuration list for PBXNativeTarget "AutoPrintr-mac" */;
+			buildPhases = (
+				A64428E01D74A0130054CFE0 /* Sources */,
+				A64428E11D74A0130054CFE0 /* Frameworks */,
+				A64428E21D74A0130054CFE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AutoPrintr-mac";
+			productName = "AutoPrintr-mac";
+			productReference = A64428E41D74A0130054CFE0 /* AutoPrintr-mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A64428DC1D74A0130054CFE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Catalin Haidau";
+				TargetAttributes = {
+					A64428E31D74A0130054CFE0 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A64428DF1D74A0130054CFE0 /* Build configuration list for PBXProject "AutoPrintr-mac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A64428DB1D74A0130054CFE0;
+			productRefGroup = A64428E51D74A0130054CFE0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A64428E31D74A0130054CFE0 /* AutoPrintr-mac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A64428E21D74A0130054CFE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A64428EE1D74A0130054CFE0 /* Assets.xcassets in Resources */,
+				A64428F11D74A0140054CFE0 /* MainMenu.xib in Resources */,
+				A6C192B41D74B4A300D28CE7 /* LoginViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A64428E01D74A0130054CFE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A64428EC1D74A0130054CFE0 /* main.m in Sources */,
+				A64428E91D74A0130054CFE0 /* AppDelegate.m in Sources */,
+				A6C192B31D74B4A300D28CE7 /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A64428EF1D74A0140054CFE0 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A64428F01D74A0140054CFE0 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A64428F31D74A0140054CFE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A64428F41D74A0140054CFE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A64428F61D74A0140054CFE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "AutoPrintr-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Catalin-Haidau.AutoPrintr-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A64428F71D74A0140054CFE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "AutoPrintr-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Catalin-Haidau.AutoPrintr-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A64428DF1D74A0130054CFE0 /* Build configuration list for PBXProject "AutoPrintr-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A64428F31D74A0140054CFE0 /* Debug */,
+				A64428F41D74A0140054CFE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A64428F51D74A0140054CFE0 /* Build configuration list for PBXNativeTarget "AutoPrintr-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A64428F61D74A0140054CFE0 /* Debug */,
+				A64428F71D74A0140054CFE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A64428DC1D74A0130054CFE0 /* Project object */;
+}
