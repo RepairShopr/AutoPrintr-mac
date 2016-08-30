@@ -31,11 +31,11 @@
 
 - (IBAction)didClickLoginButton:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];
-    
+
     self.loginViewController = [LoginViewController new];
     [self.window.contentView addSubview:self.loginViewController.view];
     [[self.loginViewController view] setFrame:[[self.window contentView] bounds]];
-    
+
     [self.window makeKeyAndOrderFront:nil];
 }
 

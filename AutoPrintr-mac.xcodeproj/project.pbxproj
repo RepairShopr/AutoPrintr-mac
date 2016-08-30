@@ -13,6 +13,14 @@
 		A64428F11D74A0140054CFE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64428EF1D74A0140054CFE0 /* MainMenu.xib */; };
 		A6C192B31D74B4A300D28CE7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C192B11D74B4A300D28CE7 /* LoginViewController.m */; };
 		A6C192B41D74B4A300D28CE7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */; };
+		A6F1441F1D75A9F400621872 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1441E1D75A9F400621872 /* LoginRequest.m */; };
+		A6F144271D75B42C00621872 /* NSViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F144261D75B42C00621872 /* NSViewController+Alert.m */; };
+		A6F1442A1D75B43E00621872 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F144291D75B43E00621872 /* BaseRequest.m */; };
+		A6F1442E1D75B54300621872 /* AlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1442D1D75B54300621872 /* AlertViewManager.m */; };
+		A6F144321D75CA7400621872 /* PresentationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F144311D75CA7400621872 /* PresentationAnimator.m */; };
+		A6F144381D75D5E900621872 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F144361D75D5E900621872 /* SelectLocationViewController.m */; };
+		A6F144391D75D5E900621872 /* SelectLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6F144371D75D5E900621872 /* SelectLocationViewController.xib */; };
+		CA7858FB383C441844D6378D /* libPods-AutoPrintr-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1A81E275A51889BDE5875E /* libPods-AutoPrintr-mac.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,22 @@
 		A6C192B01D74B4A300D28CE7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
 		A6C192B11D74B4A300D28CE7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
 		A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Controllers/LoginViewController.xib; sourceTree = "<group>"; };
+		A6F1441D1D75A9F400621872 /* LoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginRequest.h; path = Requests/LoginRequest.h; sourceTree = "<group>"; };
+		A6F1441E1D75A9F400621872 /* LoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginRequest.m; path = Requests/LoginRequest.m; sourceTree = "<group>"; };
+		A6F144251D75B42C00621872 /* NSViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSViewController+Alert.h"; path = "Helpers/NSViewController+Alert.h"; sourceTree = "<group>"; };
+		A6F144261D75B42C00621872 /* NSViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSViewController+Alert.m"; path = "Helpers/NSViewController+Alert.m"; sourceTree = "<group>"; };
+		A6F144281D75B43E00621872 /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseRequest.h; path = Requests/BaseRequest.h; sourceTree = "<group>"; };
+		A6F144291D75B43E00621872 /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseRequest.m; path = Requests/BaseRequest.m; sourceTree = "<group>"; };
+		A6F1442C1D75B54300621872 /* AlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertViewManager.h; path = Helpers/AlertViewManager.h; sourceTree = "<group>"; };
+		A6F1442D1D75B54300621872 /* AlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertViewManager.m; path = Helpers/AlertViewManager.m; sourceTree = "<group>"; };
+		A6F144301D75CA7400621872 /* PresentationAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PresentationAnimator.h; path = Helpers/PresentationAnimator.h; sourceTree = "<group>"; };
+		A6F144311D75CA7400621872 /* PresentationAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PresentationAnimator.m; path = Helpers/PresentationAnimator.m; sourceTree = "<group>"; };
+		A6F144351D75D5E900621872 /* SelectLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectLocationViewController.h; path = Controllers/SelectLocationViewController.h; sourceTree = "<group>"; };
+		A6F144361D75D5E900621872 /* SelectLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectLocationViewController.m; path = Controllers/SelectLocationViewController.m; sourceTree = "<group>"; };
+		A6F144371D75D5E900621872 /* SelectLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectLocationViewController.xib; path = Controllers/SelectLocationViewController.xib; sourceTree = "<group>"; };
+		D922A78609F8070A2D55325F /* Pods-AutoPrintr-mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoPrintr-mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoPrintr-mac/Pods-AutoPrintr-mac.release.xcconfig"; sourceTree = "<group>"; };
+		DD1A81E275A51889BDE5875E /* libPods-AutoPrintr-mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoPrintr-mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFF42781D39084408BF301F /* Pods-AutoPrintr-mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoPrintr-mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoPrintr-mac/Pods-AutoPrintr-mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +57,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA7858FB383C441844D6378D /* libPods-AutoPrintr-mac.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5941AEA651B9821C15FAE45E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD1A81E275A51889BDE5875E /* libPods-AutoPrintr-mac.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A64428DB1D74A0130054CFE0 = {
 			isa = PBXGroup;
 			children = (
 				A64428E61D74A0130054CFE0 /* AutoPrintr-mac */,
 				A64428E51D74A0130054CFE0 /* Products */,
+				B2732D3C97FAA74CE538D866 /* Pods */,
+				5941AEA651B9821C15FAE45E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +93,8 @@
 		A64428E61D74A0130054CFE0 /* AutoPrintr-mac */ = {
 			isa = PBXGroup;
 			children = (
+				A6F144201D75B37800621872 /* Helpers */,
+				A6C192F71D75A50C00D28CE7 /* Requests */,
 				A6C192AF1D74B48400D28CE7 /* Controllers */,
 				A64428E71D74A0130054CFE0 /* AppDelegate.h */,
 				A64428E81D74A0130054CFE0 /* AppDelegate.m */,
@@ -88,11 +125,103 @@
 		A6C192AF1D74B48400D28CE7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A6F144341D75D5A000621872 /* SelectLocationViewController */,
+				A6F144331D75D59500621872 /* LoginViewController */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A6C192F71D75A50C00D28CE7 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				A6C192F91D75A70400D28CE7 /* LoginRequest */,
+				A6C192F81D75A59800D28CE7 /* BaseRequest */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		A6C192F81D75A59800D28CE7 /* BaseRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A6F144281D75B43E00621872 /* BaseRequest.h */,
+				A6F144291D75B43E00621872 /* BaseRequest.m */,
+			);
+			name = BaseRequest;
+			sourceTree = "<group>";
+		};
+		A6C192F91D75A70400D28CE7 /* LoginRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A6F1441D1D75A9F400621872 /* LoginRequest.h */,
+				A6F1441E1D75A9F400621872 /* LoginRequest.m */,
+			);
+			name = LoginRequest;
+			sourceTree = "<group>";
+		};
+		A6F144201D75B37800621872 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A6F1442F1D75CA4300621872 /* PresentationAnimator */,
+				A6F1442B1D75B53000621872 /* AlertViewManager */,
+				A6F144241D75B40100621872 /* NSViewController+Alert */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		A6F144241D75B40100621872 /* NSViewController+Alert */ = {
+			isa = PBXGroup;
+			children = (
+				A6F144251D75B42C00621872 /* NSViewController+Alert.h */,
+				A6F144261D75B42C00621872 /* NSViewController+Alert.m */,
+			);
+			name = "NSViewController+Alert";
+			sourceTree = "<group>";
+		};
+		A6F1442B1D75B53000621872 /* AlertViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				A6F1442C1D75B54300621872 /* AlertViewManager.h */,
+				A6F1442D1D75B54300621872 /* AlertViewManager.m */,
+			);
+			name = AlertViewManager;
+			sourceTree = "<group>";
+		};
+		A6F1442F1D75CA4300621872 /* PresentationAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				A6F144301D75CA7400621872 /* PresentationAnimator.h */,
+				A6F144311D75CA7400621872 /* PresentationAnimator.m */,
+			);
+			name = PresentationAnimator;
+			sourceTree = "<group>";
+		};
+		A6F144331D75D59500621872 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
 				A6C192B01D74B4A300D28CE7 /* LoginViewController.h */,
 				A6C192B11D74B4A300D28CE7 /* LoginViewController.m */,
 				A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */,
 			);
-			name = Controllers;
+			name = LoginViewController;
+			sourceTree = "<group>";
+		};
+		A6F144341D75D5A000621872 /* SelectLocationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A6F144351D75D5E900621872 /* SelectLocationViewController.h */,
+				A6F144361D75D5E900621872 /* SelectLocationViewController.m */,
+				A6F144371D75D5E900621872 /* SelectLocationViewController.xib */,
+			);
+			name = SelectLocationViewController;
+			sourceTree = "<group>";
+		};
+		B2732D3C97FAA74CE538D866 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF42781D39084408BF301F /* Pods-AutoPrintr-mac.debug.xcconfig */,
+				D922A78609F8070A2D55325F /* Pods-AutoPrintr-mac.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,9 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A64428F51D74A0140054CFE0 /* Build configuration list for PBXNativeTarget "AutoPrintr-mac" */;
 			buildPhases = (
+				3AE05B7386BE3D7D901B6837 /* Check Pods Manifest.lock */,
 				A64428E01D74A0130054CFE0 /* Sources */,
 				A64428E11D74A0130054CFE0 /* Frameworks */,
 				A64428E21D74A0130054CFE0 /* Resources */,
+				0EA86FD8BC88791BECED7A9F /* Embed Pods Frameworks */,
+				52B7EF6055847987F8359CFC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,20 +286,75 @@
 			files = (
 				A64428EE1D74A0130054CFE0 /* Assets.xcassets in Resources */,
 				A64428F11D74A0140054CFE0 /* MainMenu.xib in Resources */,
+				A6F144391D75D5E900621872 /* SelectLocationViewController.xib in Resources */,
 				A6C192B41D74B4A300D28CE7 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EA86FD8BC88791BECED7A9F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoPrintr-mac/Pods-AutoPrintr-mac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AE05B7386BE3D7D901B6837 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		52B7EF6055847987F8359CFC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoPrintr-mac/Pods-AutoPrintr-mac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A64428E01D74A0130054CFE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6F144381D75D5E900621872 /* SelectLocationViewController.m in Sources */,
+				A6F144321D75CA7400621872 /* PresentationAnimator.m in Sources */,
 				A64428EC1D74A0130054CFE0 /* main.m in Sources */,
+				A6F1442E1D75B54300621872 /* AlertViewManager.m in Sources */,
+				A6F144271D75B42C00621872 /* NSViewController+Alert.m in Sources */,
 				A64428E91D74A0130054CFE0 /* AppDelegate.m in Sources */,
 				A6C192B31D74B4A300D28CE7 /* LoginViewController.m in Sources */,
+				A6F1442A1D75B43E00621872 /* BaseRequest.m in Sources */,
+				A6F1441F1D75A9F400621872 /* LoginRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +455,7 @@
 		};
 		A64428F61D74A0140054CFE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDFF42781D39084408BF301F /* Pods-AutoPrintr-mac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -280,6 +468,7 @@
 		};
 		A64428F71D74A0140054CFE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D922A78609F8070A2D55325F /* Pods-AutoPrintr-mac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

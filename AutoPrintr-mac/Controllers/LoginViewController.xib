@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
+                <outlet property="loginTextField" destination="21i-5Q-5xd" id="76z-IM-pwz"/>
+                <outlet property="passwordTextField" destination="E1y-TT-ZIg" id="EvU-Ou-fuX"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -42,6 +44,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="selectText:" target="E1y-TT-ZIg" id="sLc-ro-bKm"/>
+                    </connections>
                 </textField>
                 <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E1y-TT-ZIg">
                     <rect key="frame" x="180" y="181" width="250" height="27"/>
@@ -67,6 +72,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="didClickLoginButton:" target="-2" id="pSd-3J-rUI"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>
