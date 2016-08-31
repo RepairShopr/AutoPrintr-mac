@@ -7,6 +7,8 @@
 //
 
 #import "LoginRequest.h"
+#import "DataManager.h"
+#import "User.h"
 
 @interface LoginRequest()
 @property (strong, nonatomic) NSString *email;
@@ -35,6 +37,12 @@
 - (NSDictionary *)params {
     return @{@"email": self.email,
              @"password": self.password};
+}
+
+- (id)successData:(id)data {
+    User *user = [User createFromDictionary:data];
+    [DataManager shared].loggedInUser = user;
+    return user;
 }
 
 @end

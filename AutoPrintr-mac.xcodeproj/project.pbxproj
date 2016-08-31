@@ -11,6 +11,9 @@
 		A64428EC1D74A0130054CFE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A64428EB1D74A0130054CFE0 /* main.m */; };
 		A64428EE1D74A0130054CFE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A64428ED1D74A0130054CFE0 /* Assets.xcassets */; };
 		A64428F11D74A0140054CFE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64428EF1D74A0140054CFE0 /* MainMenu.xib */; };
+		A66F3B0A1D773308003EC562 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B091D773308003EC562 /* Location.m */; };
+		A66F3B0F1D773686003EC562 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B0E1D773686003EC562 /* DataManager.m */; };
+		A66F3B131D773701003EC562 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B121D773701003EC562 /* User.m */; };
 		A6C192B31D74B4A300D28CE7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C192B11D74B4A300D28CE7 /* LoginViewController.m */; };
 		A6C192B41D74B4A300D28CE7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */; };
 		A6F1441F1D75A9F400621872 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1441E1D75A9F400621872 /* LoginRequest.m */; };
@@ -31,6 +34,12 @@
 		A64428ED1D74A0130054CFE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A64428F01D74A0140054CFE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A64428F21D74A0140054CFE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A66F3B081D773308003EC562 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Models/Location.h; sourceTree = "<group>"; };
+		A66F3B091D773308003EC562 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Models/Location.m; sourceTree = "<group>"; };
+		A66F3B0D1D773686003EC562 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Models/DataManager.h; sourceTree = "<group>"; };
+		A66F3B0E1D773686003EC562 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Models/DataManager.m; sourceTree = "<group>"; };
+		A66F3B111D773701003EC562 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
+		A66F3B121D773701003EC562 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
 		A6C192B01D74B4A300D28CE7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
 		A6C192B11D74B4A300D28CE7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
 		A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Controllers/LoginViewController.xib; sourceTree = "<group>"; };
@@ -93,6 +102,8 @@
 		A64428E61D74A0130054CFE0 /* AutoPrintr-mac */ = {
 			isa = PBXGroup;
 			children = (
+				A66F3B0B1D7735F1003EC562 /* Managers */,
+				A66F3B061D7732DD003EC562 /* Models */,
 				A6F144201D75B37800621872 /* Helpers */,
 				A6C192F71D75A50C00D28CE7 /* Requests */,
 				A6C192AF1D74B48400D28CE7 /* Controllers */,
@@ -113,6 +124,50 @@
 				A64428EB1D74A0130054CFE0 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A66F3B061D7732DD003EC562 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A66F3B101D7736F1003EC562 /* User */,
+				A66F3B071D7732E8003EC562 /* Location */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A66F3B071D7732E8003EC562 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				A66F3B081D773308003EC562 /* Location.h */,
+				A66F3B091D773308003EC562 /* Location.m */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		A66F3B0B1D7735F1003EC562 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A66F3B0C1D7735F9003EC562 /* DataManager */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		A66F3B0C1D7735F9003EC562 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				A66F3B0D1D773686003EC562 /* DataManager.h */,
+				A66F3B0E1D773686003EC562 /* DataManager.m */,
+			);
+			name = DataManager;
+			sourceTree = "<group>";
+		};
+		A66F3B101D7736F1003EC562 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A66F3B111D773701003EC562 /* User.h */,
+				A66F3B121D773701003EC562 /* User.m */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 		A6C192AA1D74AA7600D28CE7 /* Resources */ = {
@@ -352,8 +407,11 @@
 				A6F1442E1D75B54300621872 /* AlertViewManager.m in Sources */,
 				A6F144271D75B42C00621872 /* NSViewController+Alert.m in Sources */,
 				A64428E91D74A0130054CFE0 /* AppDelegate.m in Sources */,
+				A66F3B0A1D773308003EC562 /* Location.m in Sources */,
 				A6C192B31D74B4A300D28CE7 /* LoginViewController.m in Sources */,
+				A66F3B131D773701003EC562 /* User.m in Sources */,
 				A6F1442A1D75B43E00621872 /* BaseRequest.m in Sources */,
+				A66F3B0F1D773686003EC562 /* DataManager.m in Sources */,
 				A6F1441F1D75A9F400621872 /* LoginRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

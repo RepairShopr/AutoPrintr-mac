@@ -11,14 +11,26 @@
 #import "NSViewController+Alert.h"
 #import "PresentationAnimator.h"
 #import "LoginRequest.h"
-
+#import "User.h"
 
 @interface LoginViewController ()
 @property (weak) IBOutlet NSTextField *loginTextField;
 @property (weak) IBOutlet NSSecureTextField *passwordTextField;
+
+@property (weak, nonatomic) id<LoginDelegate> delegate;
 @end
 
 @implementation LoginViewController
+
+#pragma mark - Constructor
+
++ (instancetype)createWithDelegate:(id<LoginDelegate>)delegate {
+    LoginViewController *viewController = [self new];
+    
+    viewController.delegate = delegate;
+    
+    return viewController;
+}
 
 #pragma mark - Buttons Actions
 
@@ -34,7 +46,8 @@
                                                   password:self.passwordTextField.stringValue];
     request.hasCustomDisplayErrorMessage = YES;
     
-    [request setSuccess:^(id request, id response) {
+    [request setSuccess:^(id request, User *user) {
+        [self.delegate loginDidSucceed];
         [self presentViewController:[SelectLocationViewController new]
                            animator:[PresentationAnimator new]];
     }];

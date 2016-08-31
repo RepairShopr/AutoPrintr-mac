@@ -9,15 +9,18 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <LoginDelegate>
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSMenu *mainMenu;
+@property (weak) IBOutlet NSMenuItem *loginMenuItem;
 
 @property (strong, nonatomic) LoginViewController *loginViewController;
 @property (strong, nonatomic) NSStatusItem *statusItem;
 @end
 
 @implementation AppDelegate
+
+#pragma mark - Menu
 
 - (void)awakeFromNib {
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
@@ -29,19 +32,38 @@
     self.statusItem.highlightMode = YES;
 }
 
+#pragma mark - Buttons Actions
+
 - (IBAction)didClickLoginButton:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];
 
-    self.loginViewController = [LoginViewController new];
+    self.loginViewController = [LoginViewController createWithDelegate:self];
     [self.window.contentView addSubview:self.loginViewController.view];
     [[self.loginViewController view] setFrame:[[self.window contentView] bounds]];
 
     [self.window makeKeyAndOrderFront:nil];
 }
 
+- (IBAction)didClickLocationButton:(id)sender {
+    
+}
+
 - (IBAction)didClickQuitButton:(id)sender {
     [NSApp terminate:nil];
 }
+
+#pragma mark - Login Delegate
+
+- (void)loginDidSucceed {
+    [self.mainMenu removeItem:self.loginMenuItem];
+    
+    NSMenuItem *locationsItem = [[NSMenuItem alloc] initWithTitle:@"Locations"
+                                                           action:@selector(didClickLocationButton:)
+                                                    keyEquivalent:@""];
+    [self.mainMenu insertItem:locationsItem atIndex:0];
+}
+
+#pragma mark - App Delegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application

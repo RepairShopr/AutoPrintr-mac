@@ -23,7 +23,6 @@
     [bottomViewController.view addSubview:topViewController.view];
     
     [topViewController.view setFrame:bottomViewController.view.frame];
-    topViewController.view.layer.backgroundColor = [NSColor grayColor].CGColor;
     
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = 0.2;
