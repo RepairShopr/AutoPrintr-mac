@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Location.h"
 #import "User.h"
 
 @interface DataManager : NSObject
 
 + (instancetype)shared;
 
+@property (strong, nonatomic) Location *selectedLocation;
 @property (strong, nonatomic) User *loggedInUser;
 
 @end

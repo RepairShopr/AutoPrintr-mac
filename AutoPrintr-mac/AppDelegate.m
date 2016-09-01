@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SelectLocationViewController.h"
 #import "LoginViewController.h"
 
 @interface AppDelegate () <LoginDelegate>
@@ -16,6 +17,10 @@
 
 @property (strong, nonatomic) LoginViewController *loginViewController;
 @property (strong, nonatomic) NSStatusItem *statusItem;
+
+@property (strong, nonatomic) SelectLocationViewController *selectLocationViewController;
+@property (strong, nonatomic) NSWindow *locationsWindow;
+
 @end
 
 @implementation AppDelegate
@@ -45,7 +50,20 @@
 }
 
 - (IBAction)didClickLocationButton:(id)sender {
-    
+//#warning change this
+//
+//    
+//    NSRect frame = NSMakeRect(0, 0, 460, 380);
+//    self.locationsWindow  = [[NSWindow alloc] initWithContentRect:frame
+//                                                     styleMask:NSClosableWindowMask
+//                                                       backing:NSBackingStoreBuffered
+//                                                         defer:NO];
+//    [self.locationsWindow.contentView setFrame:NSMakeRect(0, 0, 460, 380)];
+//    self.selectLocationViewController = [SelectLocationViewController new];
+//    [self.locationsWindow.contentView addSubview:self.selectLocationViewController.view];
+//    [[self.selectLocationViewController view] setFrame:[self.locationsWindow.contentView bounds]];
+//  
+//    [self.locationsWindow makeKeyAndOrderFront:nil];
 }
 
 - (IBAction)didClickQuitButton:(id)sender {

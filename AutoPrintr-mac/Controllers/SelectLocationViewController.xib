@@ -7,7 +7,9 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SelectLocationViewController">
             <connections>
+                <outlet property="arrayController" destination="yO5-oW-CsV" id="exa-XY-0nn"/>
                 <outlet property="selectedLocationLabel" destination="vY5-3s-Hm7" id="fga-Kw-mXI"/>
+                <outlet property="tableView" destination="A9X-pt-VTh" id="HeT-5G-pfG"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -34,19 +36,19 @@
                     </textFieldCell>
                 </textField>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-OL-gpQ">
-                    <rect key="frame" x="0.0" y="70" width="480" height="238"/>
+                    <rect key="frame" x="0.0" y="70" width="480" height="186"/>
                     <clipView key="contentView" id="qNU-wH-do3">
-                        <rect key="frame" x="1" y="23" width="478" height="214"/>
+                        <rect key="frame" x="1" y="0.0" width="478" height="185"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="zWd-Cq-f4U" viewBased="YES" id="A9X-pt-VTh">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="214"/>
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="zWd-Cq-f4U" viewBased="YES" id="A9X-pt-VTh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="162"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="238" minWidth="40" maxWidth="1000" id="ihv-DO-uKJ">
+                                    <tableColumn editable="NO" width="238" minWidth="40" maxWidth="1000" id="ihv-DO-uKJ">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Location name">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -62,7 +64,7 @@
                                             <binding destination="yO5-oW-CsV" name="value" keyPath="arrangedObjects.name" id="2DI-u1-beQ"/>
                                         </connections>
                                     </tableColumn>
-                                    <tableColumn width="356" minWidth="40" maxWidth="1000" id="t1K-Rb-b7v">
+                                    <tableColumn editable="NO" width="356" minWidth="40" maxWidth="1000" id="t1K-Rb-b7v">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Location id">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -84,10 +86,10 @@
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
                     <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="eqV-De-YZV">
-                        <rect key="frame" x="1" y="221" width="478" height="16"/>
+                        <rect key="frame" x="1" y="169" width="478" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="HoK-oH-LfN">
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="HoK-oH-LfN">
                         <rect key="frame" x="224" y="17" width="15" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -106,17 +108,33 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="didClickSaveButton:" target="-2" id="Pfc-FJ-id7"/>
+                    </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VGv-PN-Xti">
+                    <rect key="frame" x="18" y="264" width="444" height="44"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="mNG-y1-NXO">
+                        <font key="font" metaFont="system" size="18"/>
+                        <string key="title">What location do you want to receive print jobs for? 
+Choose one:</string>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="KsH-Dd-aTf" secondAttribute="bottom" constant="20" id="5Up-gI-bRY"/>
+                <constraint firstItem="VGv-PN-Xti" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="7yx-PM-nTU"/>
                 <constraint firstItem="PfN-OL-gpQ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="H8T-cY-aJA"/>
                 <constraint firstItem="vY5-3s-Hm7" firstAttribute="leading" secondItem="iiI-0K-DwY" secondAttribute="trailing" constant="8" id="LlL-MT-yKK"/>
                 <constraint firstAttribute="trailing" secondItem="PfN-OL-gpQ" secondAttribute="trailing" id="SbS-Hy-Udl"/>
-                <constraint firstItem="PfN-OL-gpQ" firstAttribute="top" secondItem="iiI-0K-DwY" secondAttribute="bottom" constant="8" id="TW0-u2-mQE"/>
+                <constraint firstItem="zWd-Cq-f4U" firstAttribute="top" secondItem="VGv-PN-Xti" secondAttribute="bottom" constant="8" id="TN0-yV-HaQ"/>
                 <constraint firstAttribute="bottom" secondItem="PfN-OL-gpQ" secondAttribute="bottom" constant="70" id="TvF-I9-Frj"/>
                 <constraint firstItem="vY5-3s-Hm7" firstAttribute="centerY" secondItem="iiI-0K-DwY" secondAttribute="centerY" id="UCF-dg-giY"/>
+                <constraint firstAttribute="trailing" secondItem="VGv-PN-Xti" secondAttribute="trailing" constant="20" id="WJB-pz-876"/>
                 <constraint firstItem="iiI-0K-DwY" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="XXL-Io-4E4"/>
+                <constraint firstItem="VGv-PN-Xti" firstAttribute="top" secondItem="iiI-0K-DwY" secondAttribute="bottom" constant="8" id="ZfF-Kq-9pl"/>
                 <constraint firstItem="iiI-0K-DwY" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="fjz-q1-97W"/>
                 <constraint firstItem="KsH-Dd-aTf" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="uWp-zj-tiY"/>
             </constraints>

@@ -14,6 +14,8 @@
 		A66F3B0A1D773308003EC562 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B091D773308003EC562 /* Location.m */; };
 		A66F3B0F1D773686003EC562 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B0E1D773686003EC562 /* DataManager.m */; };
 		A66F3B131D773701003EC562 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B121D773701003EC562 /* User.m */; };
+		A68809F31D78640A00520336 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68809F11D78640A00520336 /* SettingsViewController.m */; };
+		A68809F41D78640A00520336 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68809F21D78640A00520336 /* SettingsViewController.xib */; };
 		A6C192B31D74B4A300D28CE7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C192B11D74B4A300D28CE7 /* LoginViewController.m */; };
 		A6C192B41D74B4A300D28CE7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */; };
 		A6F1441F1D75A9F400621872 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1441E1D75A9F400621872 /* LoginRequest.m */; };
@@ -40,6 +42,9 @@
 		A66F3B0E1D773686003EC562 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Models/DataManager.m; sourceTree = "<group>"; };
 		A66F3B111D773701003EC562 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
 		A66F3B121D773701003EC562 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
+		A68809F01D78640A00520336 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Controllers/SettingsViewController.h; sourceTree = "<group>"; };
+		A68809F11D78640A00520336 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controllers/SettingsViewController.m; sourceTree = "<group>"; };
+		A68809F21D78640A00520336 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = Controllers/SettingsViewController.xib; sourceTree = "<group>"; };
 		A6C192B01D74B4A300D28CE7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
 		A6C192B11D74B4A300D28CE7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
 		A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Controllers/LoginViewController.xib; sourceTree = "<group>"; };
@@ -170,6 +175,16 @@
 			name = User;
 			sourceTree = "<group>";
 		};
+		A68809EF1D7863C900520336 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A68809F01D78640A00520336 /* SettingsViewController.h */,
+				A68809F11D78640A00520336 /* SettingsViewController.m */,
+				A68809F21D78640A00520336 /* SettingsViewController.xib */,
+			);
+			name = SettingsViewController;
+			sourceTree = "<group>";
+		};
 		A6C192AA1D74AA7600D28CE7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +195,7 @@
 		A6C192AF1D74B48400D28CE7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A68809EF1D7863C900520336 /* SettingsViewController */,
 				A6F144341D75D5A000621872 /* SelectLocationViewController */,
 				A6F144331D75D59500621872 /* LoginViewController */,
 			);
@@ -343,6 +359,7 @@
 				A64428F11D74A0140054CFE0 /* MainMenu.xib in Resources */,
 				A6F144391D75D5E900621872 /* SelectLocationViewController.xib in Resources */,
 				A6C192B41D74B4A300D28CE7 /* LoginViewController.xib in Resources */,
+				A68809F41D78640A00520336 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +430,7 @@
 				A6F1442A1D75B43E00621872 /* BaseRequest.m in Sources */,
 				A66F3B0F1D773686003EC562 /* DataManager.m in Sources */,
 				A6F1441F1D75A9F400621872 /* LoginRequest.m in Sources */,
+				A68809F31D78640A00520336 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

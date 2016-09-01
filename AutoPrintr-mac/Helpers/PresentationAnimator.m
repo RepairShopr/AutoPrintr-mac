@@ -21,9 +21,12 @@
     topViewController.view.alphaValue = 0;
     
     [bottomViewController.view addSubview:topViewController.view];
-    
     [topViewController.view setFrame:bottomViewController.view.frame];
-    
+    topViewController.view.layer.backgroundColor = [NSColor colorWithRed:231.0/255.0
+                                                                   green:231.0/255.0
+                                                                    blue:231.0/255.0
+                                                                   alpha:1].CGColor;
+
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = 0.2;
         topViewController.view.animator.alphaValue = 1;
@@ -38,7 +41,7 @@
     topViewController.view.layerContentsRedrawPolicy = NSViewLayerContentsRedrawOnSetNeedsDisplay;
     
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-        context.duration = 0.5;
+        context.duration = 0.2;
         topViewController.view.animator.alphaValue = 0;
     } completionHandler:^{
         [topViewController.view removeFromSuperview];
