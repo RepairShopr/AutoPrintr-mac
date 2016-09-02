@@ -65,7 +65,7 @@
         [self presentViewController:[SettingsViewController new]
                            animator:[PresentationAnimator new]];
     } else {
-
+        [self.view.window performClose:self];
     }
 }
 

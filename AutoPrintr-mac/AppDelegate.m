@@ -50,20 +50,21 @@
 }
 
 - (IBAction)didClickLocationButton:(id)sender {
-//#warning change this
-//
-//    
-//    NSRect frame = NSMakeRect(0, 0, 460, 380);
-//    self.locationsWindow  = [[NSWindow alloc] initWithContentRect:frame
-//                                                     styleMask:NSClosableWindowMask
-//                                                       backing:NSBackingStoreBuffered
-//                                                         defer:NO];
-//    [self.locationsWindow.contentView setFrame:NSMakeRect(0, 0, 460, 380)];
-//    self.selectLocationViewController = [SelectLocationViewController new];
-//    [self.locationsWindow.contentView addSubview:self.selectLocationViewController.view];
-//    [[self.selectLocationViewController view] setFrame:[self.locationsWindow.contentView bounds]];
-//  
-//    [self.locationsWindow makeKeyAndOrderFront:nil];
+    [NSApp activateIgnoringOtherApps:YES];
+
+#warning remove this hard-coded frame
+    NSRect frame = NSMakeRect(100, 100, 460, 380);
+    self.locationsWindow = [[NSWindow alloc] initWithContentRect:frame
+                                                       styleMask:NSTitledWindowMask | NSClosableWindowMask
+                                                         backing:NSBackingStoreBuffered
+                                                           defer:NO];
+    self.locationsWindow.releasedWhenClosed = NO;
+    
+    self.selectLocationViewController = [SelectLocationViewController new];
+    [self.locationsWindow.contentView addSubview:self.selectLocationViewController.view];
+    [[self.selectLocationViewController view] setFrame:[self.locationsWindow.contentView bounds]];
+    
+    [self.locationsWindow makeKeyAndOrderFront:self];
 }
 
 - (IBAction)didClickQuitButton:(id)sender {

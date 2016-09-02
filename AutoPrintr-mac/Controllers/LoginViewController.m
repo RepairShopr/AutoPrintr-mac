@@ -35,7 +35,6 @@
 #pragma mark - Buttons Actions
 
 - (IBAction)didClickLoginButton:(id)sender {
-    NSLog(@"click login");
     [self runLoginRequest];
 }
 
