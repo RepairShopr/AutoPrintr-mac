@@ -7,6 +7,14 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SettingsViewController">
             <connections>
+                <outlet property="assetLabelsButton" destination="ohE-dM-tx0" id="LRq-UC-ZJf"/>
+                <outlet property="customerLabelsButton" destination="CkW-F4-Ve8" id="FZa-t2-QTd"/>
+                <outlet property="intakeFormsButton" destination="e2o-hB-Zeq" id="hgW-zi-k9r"/>
+                <outlet property="invoicesButton" destination="H8E-t4-vB6" id="Fjq-1W-QQX"/>
+                <outlet property="receiptsButton" destination="Bm7-4A-7CT" id="FYj-80-ELi"/>
+                <outlet property="ticketLabelsButton" destination="Tk4-i6-uqc" id="NvA-GV-ab3"/>
+                <outlet property="ticketReceiptsButton" destination="ty2-7Q-QNN" id="anf-fz-181"/>
+                <outlet property="ticketsButton" destination="ESx-xn-jfO" id="Vwq-Iq-QsV"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -202,6 +210,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="didTapSaveButton:" target="-2" id="uOs-0A-LBB"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>
@@ -240,6 +251,7 @@
                 <constraint firstItem="ohE-dM-tx0" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="12" id="yMK-9F-fB0"/>
                 <constraint firstItem="Bm7-4A-7CT" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="ze4-6D-vVS"/>
             </constraints>
+            <point key="canvasLocation" x="185" y="311"/>
         </customView>
     </objects>
 </document>

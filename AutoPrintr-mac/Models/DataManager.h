@@ -12,9 +12,11 @@
 
 @interface DataManager : NSObject
 
-+ (instancetype)shared;
-
 @property (strong, nonatomic) Location *selectedLocation;
 @property (strong, nonatomic) User *loggedInUser;
+@property (strong, nonatomic) NSArray *printers;
+
++ (instancetype)shared;
+- (NSArray *)documentsSettingsForPrinterWithName:(NSString *)printerName;
 
 @end

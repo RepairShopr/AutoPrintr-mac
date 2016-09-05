@@ -11,6 +11,8 @@
 		A64428EC1D74A0130054CFE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A64428EB1D74A0130054CFE0 /* main.m */; };
 		A64428EE1D74A0130054CFE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A64428ED1D74A0130054CFE0 /* Assets.xcassets */; };
 		A64428F11D74A0140054CFE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64428EF1D74A0140054CFE0 /* MainMenu.xib */; };
+		A66435531D7DAFA50026AE1B /* DocumentSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = A66435521D7DAFA50026AE1B /* DocumentSettings.m */; };
+		A66435571D7DD0700026AE1B /* Printer.m in Sources */ = {isa = PBXBuildFile; fileRef = A66435561D7DD0700026AE1B /* Printer.m */; };
 		A66F3B0A1D773308003EC562 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B091D773308003EC562 /* Location.m */; };
 		A66F3B0F1D773686003EC562 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B0E1D773686003EC562 /* DataManager.m */; };
 		A66F3B131D773701003EC562 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B121D773701003EC562 /* User.m */; };
@@ -36,6 +38,10 @@
 		A64428ED1D74A0130054CFE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A64428F01D74A0140054CFE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A64428F21D74A0140054CFE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A66435511D7DAFA50026AE1B /* DocumentSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentSettings.h; path = Models/DocumentSettings.h; sourceTree = "<group>"; };
+		A66435521D7DAFA50026AE1B /* DocumentSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentSettings.m; path = Models/DocumentSettings.m; sourceTree = "<group>"; };
+		A66435551D7DD0700026AE1B /* Printer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Printer.h; path = Models/Printer.h; sourceTree = "<group>"; };
+		A66435561D7DD0700026AE1B /* Printer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Printer.m; path = Models/Printer.m; sourceTree = "<group>"; };
 		A66F3B081D773308003EC562 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Models/Location.h; sourceTree = "<group>"; };
 		A66F3B091D773308003EC562 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Models/Location.m; sourceTree = "<group>"; };
 		A66F3B0D1D773686003EC562 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Models/DataManager.h; sourceTree = "<group>"; };
@@ -131,9 +137,29 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A66435501D7DAEDB0026AE1B /* DocumentSettings */ = {
+			isa = PBXGroup;
+			children = (
+				A66435511D7DAFA50026AE1B /* DocumentSettings.h */,
+				A66435521D7DAFA50026AE1B /* DocumentSettings.m */,
+			);
+			name = DocumentSettings;
+			sourceTree = "<group>";
+		};
+		A66435541D7DD0610026AE1B /* Printer */ = {
+			isa = PBXGroup;
+			children = (
+				A66435551D7DD0700026AE1B /* Printer.h */,
+				A66435561D7DD0700026AE1B /* Printer.m */,
+			);
+			name = Printer;
+			sourceTree = "<group>";
+		};
 		A66F3B061D7732DD003EC562 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A66435541D7DD0610026AE1B /* Printer */,
+				A66435501D7DAEDB0026AE1B /* DocumentSettings */,
 				A66F3B101D7736F1003EC562 /* User */,
 				A66F3B071D7732E8003EC562 /* Location */,
 			);
@@ -420,6 +446,7 @@
 			files = (
 				A6F144381D75D5E900621872 /* SelectLocationViewController.m in Sources */,
 				A6F144321D75CA7400621872 /* PresentationAnimator.m in Sources */,
+				A66435531D7DAFA50026AE1B /* DocumentSettings.m in Sources */,
 				A64428EC1D74A0130054CFE0 /* main.m in Sources */,
 				A6F1442E1D75B54300621872 /* AlertViewManager.m in Sources */,
 				A6F144271D75B42C00621872 /* NSViewController+Alert.m in Sources */,
@@ -429,6 +456,7 @@
 				A66F3B131D773701003EC562 /* User.m in Sources */,
 				A6F1442A1D75B43E00621872 /* BaseRequest.m in Sources */,
 				A66F3B0F1D773686003EC562 /* DataManager.m in Sources */,
+				A66435571D7DD0700026AE1B /* Printer.m in Sources */,
 				A6F1441F1D75A9F400621872 /* LoginRequest.m in Sources */,
 				A68809F31D78640A00520336 /* SettingsViewController.m in Sources */,
 			);

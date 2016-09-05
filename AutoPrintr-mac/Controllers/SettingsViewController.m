@@ -7,16 +7,33 @@
 //
 
 #import "SettingsViewController.h"
+#import "DataManager.h"
 
 @interface SettingsViewController ()
+@property (weak) IBOutlet NSButton *ticketsButton;
+@property (weak) IBOutlet NSButton *ticketReceiptsButton;
+@property (weak) IBOutlet NSButton *intakeFormsButton;
+@property (weak) IBOutlet NSButton *invoicesButton;
+@property (weak) IBOutlet NSButton *receiptsButton;
+@property (weak) IBOutlet NSButton *customerLabelsButton;
+@property (weak) IBOutlet NSButton *assetLabelsButton;
+@property (weak) IBOutlet NSButton *ticketLabelsButton;
 
 @end
 
 @implementation SettingsViewController
 
+
+#pragma mark - ViewController Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+}
+
+#pragma mark - Buttons Actions
+
+- (IBAction)didTapSaveButton:(id)sender {
+    
 }
 
 @end
