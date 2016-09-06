@@ -10,7 +10,9 @@
 #import "SelectLocationViewController.h"
 #import "NSViewController+Alert.h"
 #import "PresentationAnimator.h"
+#import "GetRegistersRequest.h"
 #import "LoginRequest.h"
+#import "DataManager.h"
 #import "User.h"
 
 @interface LoginViewController ()
@@ -21,6 +23,13 @@
 @end
 
 @implementation LoginViewController
+
+- (void)viewWillAppear {
+    [super viewWillAppear];
+    if ([DataManager shared].loggedInUser) {
+        self.loginTextField.stringValue = [DataManager shared].loggedInUser.email;
+    }
+}
 
 #pragma mark - Constructor
 
@@ -46,13 +55,27 @@
     request.hasCustomDisplayErrorMessage = YES;
     
     [request setSuccess:^(id request, User *user) {
+        [self runRegistersRequest];
+    }];
+    
+    [request setError:^(id request, NSError *error) {
+        [self showAlertWithMessage:@"Error" details:@"Invalid credentials."];
+    }];
+    
+    [request runRequest];
+}
+
+- (void)runRegistersRequest {
+    GetRegistersRequest *request = [GetRegistersRequest request];
+    
+    [request setSuccess:^(id request, id response) {
         [self.delegate loginDidSucceed];
         [self presentViewController:[SelectLocationViewController new]
                            animator:[PresentationAnimator new]];
     }];
     
     [request setError:^(id request, NSError *error) {
-        [self showAlertWithMessage:@"Error" details:@"Invalid credentials."];
+        
     }];
     
     [request runRequest];

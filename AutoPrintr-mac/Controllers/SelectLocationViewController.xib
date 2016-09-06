@@ -16,11 +16,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+            <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iiI-0K-DwY">
-                    <rect key="frame" x="18" y="316" width="171" height="24"/>
+                    <rect key="frame" x="18" y="556" width="171" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Selected Location:" id="USe-Kt-tT9">
                         <font key="font" metaFont="system" size="20"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -28,7 +28,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vY5-3s-Hm7">
-                    <rect key="frame" x="193" y="316" width="13" height="24"/>
+                    <rect key="frame" x="193" y="556" width="13" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-" id="HRD-Yy-8Tn">
                         <font key="font" metaFont="system" size="20"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -36,13 +36,13 @@
                     </textFieldCell>
                 </textField>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-OL-gpQ">
-                    <rect key="frame" x="0.0" y="70" width="480" height="186"/>
+                    <rect key="frame" x="0.0" y="70" width="800" height="426"/>
                     <clipView key="contentView" id="qNU-wH-do3">
-                        <rect key="frame" x="1" y="0.0" width="478" height="185"/>
+                        <rect key="frame" x="1" y="0.0" width="798" height="425"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="zWd-Cq-f4U" viewBased="YES" id="A9X-pt-VTh">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="162"/>
+                                <rect key="frame" x="0.0" y="0.0" width="798" height="402"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -64,7 +64,7 @@
                                             <binding destination="yO5-oW-CsV" name="value" keyPath="arrangedObjects.name" id="2DI-u1-beQ"/>
                                         </connections>
                                     </tableColumn>
-                                    <tableColumn editable="NO" width="356" minWidth="40" maxWidth="1000" id="t1K-Rb-b7v">
+                                    <tableColumn editable="NO" width="554" minWidth="40" maxWidth="1000" id="t1K-Rb-b7v">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Location id">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -85,7 +85,7 @@
                         </subviews>
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
-                    <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="eqV-De-YZV">
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="eqV-De-YZV">
                         <rect key="frame" x="1" y="169" width="478" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -94,12 +94,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <tableHeaderView key="headerView" id="zWd-Cq-f4U">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="23"/>
+                        <rect key="frame" x="0.0" y="0.0" width="798" height="23"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KsH-Dd-aTf">
-                    <rect key="frame" x="157" y="19" width="166" height="40"/>
+                    <rect key="frame" x="317" y="19" width="166" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="EUe-Pc-gnh"/>
                         <constraint firstAttribute="width" constant="166" id="iYC-ZU-eLu"/>
@@ -113,7 +113,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VGv-PN-Xti">
-                    <rect key="frame" x="18" y="264" width="444" height="44"/>
+                    <rect key="frame" x="18" y="504" width="764" height="44"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="mNG-y1-NXO">
                         <font key="font" metaFont="system" size="18"/>
                         <string key="title">What location do you want to receive print jobs for? 

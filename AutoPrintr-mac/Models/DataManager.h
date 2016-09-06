@@ -13,10 +13,13 @@
 @interface DataManager : NSObject
 
 @property (strong, nonatomic) Location *selectedLocation;
-@property (strong, nonatomic) User *loggedInUser;
+@property (strong, nonatomic) NSString *messagingChannel;
+@property (strong, nonatomic) NSArray *registers;
 @property (strong, nonatomic) NSArray *printers;
 
 + (instancetype)shared;
-- (NSArray *)documentsSettingsForPrinterWithName:(NSString *)printerName;
+
+- (User *)loggedInUser;
+- (void)setUser:(User *)user;
 
 @end

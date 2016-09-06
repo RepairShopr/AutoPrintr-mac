@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+@interface User : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSNumber *admin;
 @property (strong, nonatomic) NSNumber *canUseApp;

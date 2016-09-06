@@ -8,7 +8,19 @@
 
 #import "PresentationAnimator.h"
 
+@interface PresentationAnimator()
+@property (nonatomic) NSSize windowSize;
+@end
+
 @implementation PresentationAnimator
+
++ (instancetype)createWithWindowSize:(NSSize)windowSize {
+    PresentationAnimator *animator = [self new];
+    
+    animator.windowSize = windowSize;
+    
+    return animator;
+}
 
 - (void)animatePresentationOfViewController:(NSViewController *)viewController
                          fromViewController:(NSViewController *)fromViewController {
@@ -19,8 +31,9 @@
     topViewController.view.layerContentsRedrawPolicy = NSViewLayerContentsRedrawOnSetNeedsDisplay;
     
     topViewController.view.alphaValue = 0;
-    
+        
     [bottomViewController.view addSubview:topViewController.view];
+    
     [topViewController.view setFrame:bottomViewController.view.frame];
     topViewController.view.layer.backgroundColor = [NSColor colorWithRed:231.0/255.0
                                                                    green:231.0/255.0

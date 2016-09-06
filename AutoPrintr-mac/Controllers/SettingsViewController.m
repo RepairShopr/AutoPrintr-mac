@@ -19,21 +19,21 @@
 @property (weak) IBOutlet NSButton *assetLabelsButton;
 @property (weak) IBOutlet NSButton *ticketLabelsButton;
 
+@property (weak) IBOutlet NSCollectionView *collectionView;
 @end
 
 @implementation SettingsViewController
-
 
 #pragma mark - ViewController Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 }
 
 #pragma mark - Buttons Actions
 
 - (IBAction)didTapSaveButton:(id)sender {
-    
 }
 
 @end

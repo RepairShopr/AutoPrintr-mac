@@ -13,6 +13,9 @@
 		A64428F11D74A0140054CFE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64428EF1D74A0140054CFE0 /* MainMenu.xib */; };
 		A66435531D7DAFA50026AE1B /* DocumentSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = A66435521D7DAFA50026AE1B /* DocumentSettings.m */; };
 		A66435571D7DD0700026AE1B /* Printer.m in Sources */ = {isa = PBXBuildFile; fileRef = A66435561D7DD0700026AE1B /* Printer.m */; };
+		A664355B1D7EDF910026AE1B /* GetRegistersRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A664355A1D7EDF910026AE1B /* GetRegistersRequest.m */; };
+		A664355F1D7EE9610026AE1B /* Register.m in Sources */ = {isa = PBXBuildFile; fileRef = A664355E1D7EE9610026AE1B /* Register.m */; };
+		A664356A1D7F083E0026AE1B /* PrintersController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66435691D7F083E0026AE1B /* PrintersController.m */; };
 		A66F3B0A1D773308003EC562 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B091D773308003EC562 /* Location.m */; };
 		A66F3B0F1D773686003EC562 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B0E1D773686003EC562 /* DataManager.m */; };
 		A66F3B131D773701003EC562 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B121D773701003EC562 /* User.m */; };
@@ -42,6 +45,12 @@
 		A66435521D7DAFA50026AE1B /* DocumentSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentSettings.m; path = Models/DocumentSettings.m; sourceTree = "<group>"; };
 		A66435551D7DD0700026AE1B /* Printer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Printer.h; path = Models/Printer.h; sourceTree = "<group>"; };
 		A66435561D7DD0700026AE1B /* Printer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Printer.m; path = Models/Printer.m; sourceTree = "<group>"; };
+		A66435591D7EDF910026AE1B /* GetRegistersRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetRegistersRequest.h; path = Requests/GetRegistersRequest.h; sourceTree = "<group>"; };
+		A664355A1D7EDF910026AE1B /* GetRegistersRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetRegistersRequest.m; path = Requests/GetRegistersRequest.m; sourceTree = "<group>"; };
+		A664355D1D7EE9610026AE1B /* Register.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Register.h; path = Models/Register.h; sourceTree = "<group>"; };
+		A664355E1D7EE9610026AE1B /* Register.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Register.m; path = Models/Register.m; sourceTree = "<group>"; };
+		A66435681D7F083E0026AE1B /* PrintersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrintersController.h; path = Controllers/PrintersController.h; sourceTree = "<group>"; };
+		A66435691D7F083E0026AE1B /* PrintersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrintersController.m; path = Controllers/PrintersController.m; sourceTree = "<group>"; };
 		A66F3B081D773308003EC562 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Models/Location.h; sourceTree = "<group>"; };
 		A66F3B091D773308003EC562 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Models/Location.m; sourceTree = "<group>"; };
 		A66F3B0D1D773686003EC562 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Models/DataManager.h; sourceTree = "<group>"; };
@@ -155,9 +164,37 @@
 			name = Printer;
 			sourceTree = "<group>";
 		};
+		A66435581D7EDF500026AE1B /* GetRegistersRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A66435591D7EDF910026AE1B /* GetRegistersRequest.h */,
+				A664355A1D7EDF910026AE1B /* GetRegistersRequest.m */,
+			);
+			name = GetRegistersRequest;
+			sourceTree = "<group>";
+		};
+		A664355C1D7EE91F0026AE1B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				A664355D1D7EE9610026AE1B /* Register.h */,
+				A664355E1D7EE9610026AE1B /* Register.m */,
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		A66435671D7F08280026AE1B /* PrintersController */ = {
+			isa = PBXGroup;
+			children = (
+				A66435681D7F083E0026AE1B /* PrintersController.h */,
+				A66435691D7F083E0026AE1B /* PrintersController.m */,
+			);
+			name = PrintersController;
+			sourceTree = "<group>";
+		};
 		A66F3B061D7732DD003EC562 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A664355C1D7EE91F0026AE1B /* Register */,
 				A66435541D7DD0610026AE1B /* Printer */,
 				A66435501D7DAEDB0026AE1B /* DocumentSettings */,
 				A66F3B101D7736F1003EC562 /* User */,
@@ -204,6 +241,7 @@
 		A68809EF1D7863C900520336 /* SettingsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A66435671D7F08280026AE1B /* PrintersController */,
 				A68809F01D78640A00520336 /* SettingsViewController.h */,
 				A68809F11D78640A00520336 /* SettingsViewController.m */,
 				A68809F21D78640A00520336 /* SettingsViewController.xib */,
@@ -231,6 +269,7 @@
 		A6C192F71D75A50C00D28CE7 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				A66435581D7EDF500026AE1B /* GetRegistersRequest */,
 				A6C192F91D75A70400D28CE7 /* LoginRequest */,
 				A6C192F81D75A59800D28CE7 /* BaseRequest */,
 			);
@@ -445,10 +484,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6F144381D75D5E900621872 /* SelectLocationViewController.m in Sources */,
+				A664355B1D7EDF910026AE1B /* GetRegistersRequest.m in Sources */,
 				A6F144321D75CA7400621872 /* PresentationAnimator.m in Sources */,
 				A66435531D7DAFA50026AE1B /* DocumentSettings.m in Sources */,
 				A64428EC1D74A0130054CFE0 /* main.m in Sources */,
 				A6F1442E1D75B54300621872 /* AlertViewManager.m in Sources */,
+				A664355F1D7EE9610026AE1B /* Register.m in Sources */,
 				A6F144271D75B42C00621872 /* NSViewController+Alert.m in Sources */,
 				A64428E91D74A0130054CFE0 /* AppDelegate.m in Sources */,
 				A66F3B0A1D773308003EC562 /* Location.m in Sources */,
@@ -458,6 +499,7 @@
 				A66F3B0F1D773686003EC562 /* DataManager.m in Sources */,
 				A66435571D7DD0700026AE1B /* Printer.m in Sources */,
 				A6F1441F1D75A9F400621872 /* LoginRequest.m in Sources */,
+				A664356A1D7F083E0026AE1B /* PrintersController.m in Sources */,
 				A68809F31D78640A00520336 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

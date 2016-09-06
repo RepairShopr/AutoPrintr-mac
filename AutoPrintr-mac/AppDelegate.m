@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SelectLocationViewController.h"
 #import "LoginViewController.h"
+#import "DataManager.h"
 
 @interface AppDelegate () <LoginDelegate>
 @property (weak) IBOutlet NSWindow *window;

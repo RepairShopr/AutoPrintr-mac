@@ -10,8 +10,10 @@
 #import "Printer.h"
 
 static NSString * const printersKey = @"printersKey";
+static NSString * const loggedInUserKey = @"loggedInUserKey";
 
 @interface DataManager()
+@property (strong, nonatomic) User *loggedInUser;
 @end
 
 @implementation DataManager
@@ -26,18 +28,6 @@ static NSString * const printersKey = @"printersKey";
     });
     
     return sharedInstance;
-}
-
-#pragma mark - Documents Settings
-
-- (NSArray *)documentsSettingsForPrinterWithName:(NSString *)printerName {
-    for (Printer *printer in self.printers) {
-        if ([printer.name isEqualToString:printerName]) {
-            return printer.documentsSettings;
-        }
-    }
-    
-    return nil;
 }
 
 #pragma mark - Printers
@@ -63,5 +53,29 @@ static NSString * const printersKey = @"printersKey";
     [defaults setObject:savedPrintersData forKey:printersKey];
 }
 
+#pragma mark - Logged In User
+
+- (User *)loggedInUser {
+    if (_loggedInUser) {
+        return _loggedInUser;
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *savedUserData = [defaults objectForKey:loggedInUserKey];
+    
+    if (savedUserData == nil) {
+        return nil;
+    }
+    
+    return [NSKeyedUnarchiver unarchiveObjectWithData:savedUserData];
+}
+
+- (void)setUser:(User *)user {
+    self.loggedInUser = user;
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *savedUserData = [NSKeyedArchiver archivedDataWithRootObject:user];
+    [defaults setObject:savedUserData forKey:loggedInUserKey];
+}
 
 @end

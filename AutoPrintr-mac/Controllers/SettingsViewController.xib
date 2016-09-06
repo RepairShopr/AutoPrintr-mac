@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="SettingsViewController">
             <connections>
                 <outlet property="assetLabelsButton" destination="ohE-dM-tx0" id="LRq-UC-ZJf"/>
+                <outlet property="collectionView" destination="tsa-Mm-M8Z" id="R02-xq-Ugb"/>
                 <outlet property="customerLabelsButton" destination="CkW-F4-Ve8" id="FZa-t2-QTd"/>
                 <outlet property="intakeFormsButton" destination="e2o-hB-Zeq" id="hgW-zi-k9r"/>
                 <outlet property="invoicesButton" destination="H8E-t4-vB6" id="Fjq-1W-QQX"/>
@@ -15,7 +16,7 @@
                 <outlet property="ticketLabelsButton" destination="Tk4-i6-uqc" id="NvA-GV-ab3"/>
                 <outlet property="ticketReceiptsButton" destination="ty2-7Q-QNN" id="anf-fz-181"/>
                 <outlet property="ticketsButton" destination="ESx-xn-jfO" id="Vwq-Iq-QsV"/>
-                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="view" destination="gTh-gq-CNJ" id="cde-IY-xzT"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -251,7 +252,105 @@
                 <constraint firstItem="ohE-dM-tx0" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="12" id="yMK-9F-fB0"/>
                 <constraint firstItem="Bm7-4A-7CT" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="ze4-6D-vVS"/>
             </constraints>
-            <point key="canvasLocation" x="185" y="311"/>
+            <point key="canvasLocation" x="239" y="41"/>
         </customView>
+        <customView id="gTh-gq-CNJ">
+            <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec7-DB-Jkf">
+                    <rect key="frame" x="100" y="60" width="700" height="540"/>
+                    <clipView key="contentView" id="iw8-FB-Oa3">
+                        <rect key="frame" x="1" y="1" width="698" height="538"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView allowsEmptySelection="NO" maxNumberOfRows="1" id="tsa-Mm-M8Z">
+                                <rect key="frame" x="0.0" y="0.0" width="698" height="538"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <color key="secondaryBackgroundColor" name="controlAlternatingRowColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <binding destination="cyj-xM-q8M" name="content" keyPath="arrangedObjects" id="hpb-wr-8cv"/>
+                                    <outlet property="itemPrototype" destination="Vq3-8N-h3f" id="Byb-tm-KaT"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="9eS-I6-Fa6">
+                        <rect key="frame" x="1" y="144" width="233" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="7GQ-nw-cpR">
+                        <rect key="frame" x="234" y="1" width="15" height="143"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jaf-nO-cHI">
+                    <rect key="frame" x="310" y="12" width="180" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="Dce-lF-5ta"/>
+                        <constraint firstAttribute="width" constant="180" id="udI-xq-rbq"/>
+                    </constraints>
+                    <buttonCell key="cell" type="smallSquare" title="Save Changes" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HzM-Tt-UnX">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="didTapSaveButton:" target="-2" id="r8Q-vM-UZb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ec7-DB-Jkf" firstAttribute="top" secondItem="gTh-gq-CNJ" secondAttribute="top" id="XRZ-zp-JsE"/>
+                <constraint firstItem="jaf-nO-cHI" firstAttribute="centerX" secondItem="gTh-gq-CNJ" secondAttribute="centerX" id="e5h-2I-Hj8"/>
+                <constraint firstAttribute="bottom" secondItem="ec7-DB-Jkf" secondAttribute="bottom" constant="60" id="gVD-iY-pfP"/>
+                <constraint firstAttribute="trailing" secondItem="ec7-DB-Jkf" secondAttribute="trailing" id="gag-Jz-th4"/>
+                <constraint firstItem="ec7-DB-Jkf" firstAttribute="leading" secondItem="gTh-gq-CNJ" secondAttribute="leading" constant="100" id="jmB-42-YDE"/>
+                <constraint firstAttribute="bottom" secondItem="jaf-nO-cHI" secondAttribute="bottom" constant="13" id="keY-SG-AHZ"/>
+            </constraints>
+            <point key="canvasLocation" x="189.5" y="335"/>
+        </customView>
+        <collectionViewItem id="Vq3-8N-h3f">
+            <connections>
+                <outlet property="view" destination="bWV-96-t0C" id="uKR-8n-crD"/>
+            </connections>
+        </collectionViewItem>
+        <customView id="bWV-96-t0C">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="540"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZFv-WY-mPN">
+                    <rect key="frame" x="91" y="496" width="118" height="24"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Printer name" id="ifs-Pu-s1v">
+                        <font key="font" metaFont="system" size="20"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.name" id="Xhe-rC-Vu2"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ZFv-WY-mPN" firstAttribute="centerX" secondItem="bWV-96-t0C" secondAttribute="centerX" id="W1G-Gm-kRC"/>
+                <constraint firstItem="ZFv-WY-mPN" firstAttribute="top" secondItem="bWV-96-t0C" secondAttribute="top" constant="20" id="yHY-Bd-Xl1"/>
+            </constraints>
+            <point key="canvasLocation" x="44.5" y="345"/>
+        </customView>
+        <arrayController objectClassName="Printer" id="cyj-xM-q8M">
+            <declaredKeys>
+                <string>name</string>
+                <string>documentsSettings</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="YhH-Nq-leB" name="contentArray" keyPath="printers" id="NMh-9a-yYi"/>
+            </connections>
+        </arrayController>
+        <customObject id="YhH-Nq-leB" customClass="PrintersController">
+            <connections>
+                <outlet property="printersController" destination="cyj-xM-q8M" id="2ec-NV-04w"/>
+            </connections>
+        </customObject>
+        <userDefaultsController representsSharedInstance="YES" id="w8Q-S5-AIv"/>
     </objects>
 </document>

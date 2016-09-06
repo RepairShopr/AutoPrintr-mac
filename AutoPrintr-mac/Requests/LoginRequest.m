@@ -41,7 +41,7 @@
 
 - (id)successData:(id)data {
     User *user = [User createFromDictionary:data];
-    [DataManager shared].loggedInUser = user;
+    [[DataManager shared] setUser:user];
     return user;
 }
 

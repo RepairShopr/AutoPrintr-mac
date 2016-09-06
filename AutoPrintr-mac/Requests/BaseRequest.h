@@ -9,6 +9,7 @@
 #import <AFNetworking/AFNetworking.h>
 
 static NSString * const SERVER_BASE_URL = @"http://admin.repairshopr.com/api/v1";
+static NSString * const GLOBAL_URL = @"repairshopr.com/api/v1";
 
 typedef enum {
     kRequestMethodGET,

@@ -15,11 +15,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+            <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qt0-qX-q8f">
-                    <rect key="frame" x="48" y="233" width="59" height="27"/>
+                    <rect key="frame" x="48" y="373" width="59" height="27"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Login" id="8Fd-cj-xRt">
                         <font key="font" metaFont="system" size="22"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -27,7 +27,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sKi-X4-7Li">
-                    <rect key="frame" x="48" y="181" width="99" height="27"/>
+                    <rect key="frame" x="48" y="321" width="99" height="27"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Password" id="9Ub-es-rKA">
                         <font key="font" metaFont="system" size="22"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -35,7 +35,7 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="21i-5Q-5xd">
-                    <rect key="frame" x="180" y="233" width="250" height="27"/>
+                    <rect key="frame" x="180" y="373" width="570" height="27"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="27" id="rsE-qJ-fKU"/>
                     </constraints>
@@ -49,7 +49,7 @@
                     </connections>
                 </textField>
                 <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E1y-TT-ZIg">
-                    <rect key="frame" x="180" y="181" width="250" height="27"/>
+                    <rect key="frame" x="180" y="321" width="570" height="27"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="27" id="rTC-eV-12m"/>
                     </constraints>
@@ -63,7 +63,7 @@
                     </secureTextFieldCell>
                 </secureTextField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fMz-ri-FH4">
-                    <rect key="frame" x="157" y="92" width="166" height="40"/>
+                    <rect key="frame" x="317" y="202" width="166" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="166" id="8Vo-34-zBc"/>
                         <constraint firstAttribute="height" constant="38" id="MKp-Z1-3oh"/>
@@ -79,18 +79,19 @@
             </subviews>
             <constraints>
                 <constraint firstItem="21i-5Q-5xd" firstAttribute="leading" secondItem="qt0-qX-q8f" secondAttribute="trailing" constant="75" id="2XN-mc-Sdp"/>
-                <constraint firstItem="qt0-qX-q8f" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="100" id="6qu-eo-QXM"/>
+                <constraint firstItem="qt0-qX-q8f" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="200" id="6qu-eo-QXM"/>
                 <constraint firstAttribute="trailing" secondItem="E1y-TT-ZIg" secondAttribute="trailing" constant="50" id="EYo-aH-rWB"/>
                 <constraint firstItem="sKi-X4-7Li" firstAttribute="top" secondItem="qt0-qX-q8f" secondAttribute="bottom" constant="25" id="Lbu-BM-EFr"/>
-                <constraint firstItem="fMz-ri-FH4" firstAttribute="top" secondItem="E1y-TT-ZIg" secondAttribute="bottom" constant="50" id="ODO-4v-q1y"/>
+                <constraint firstItem="fMz-ri-FH4" firstAttribute="top" secondItem="E1y-TT-ZIg" secondAttribute="bottom" constant="80" id="ODO-4v-q1y"/>
                 <constraint firstItem="E1y-TT-ZIg" firstAttribute="top" secondItem="21i-5Q-5xd" secondAttribute="bottom" constant="25" id="Thq-VO-jcE"/>
                 <constraint firstItem="E1y-TT-ZIg" firstAttribute="leading" secondItem="sKi-X4-7Li" secondAttribute="trailing" constant="35" id="aSF-wH-XkX"/>
-                <constraint firstItem="21i-5Q-5xd" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="100" id="cUW-qd-QLG"/>
+                <constraint firstItem="21i-5Q-5xd" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="200" id="cUW-qd-QLG"/>
                 <constraint firstItem="qt0-qX-q8f" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="50" id="fOK-aQ-jVp"/>
                 <constraint firstItem="fMz-ri-FH4" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="ing-5f-Bnj"/>
                 <constraint firstAttribute="trailing" secondItem="21i-5Q-5xd" secondAttribute="trailing" constant="50" id="sv4-W8-GO6"/>
                 <constraint firstItem="sKi-X4-7Li" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="50" id="xNd-At-9UD"/>
             </constraints>
+            <point key="canvasLocation" x="323" y="355"/>
         </customView>
     </objects>
 </document>

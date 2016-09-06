@@ -35,4 +35,18 @@
     return user;
 }
 
+#pragma mark - NSCoding Protocol
+
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    self = [super init];
+    if (self) {
+        self.email = [coder decodeObjectForKey:@"email"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+    [coder encodeObject:self.email forKey:@"email"];
+}
+
 @end
