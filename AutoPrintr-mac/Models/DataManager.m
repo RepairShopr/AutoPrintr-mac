@@ -44,7 +44,8 @@ static NSString * const loggedInUserKey = @"loggedInUserKey";
         [defaults setObject:savedPrintersData forKey:printersKey];
     }
     
-    return [NSKeyedUnarchiver unarchiveObjectWithData:savedPrintersData];
+    NSArray *printers = [NSKeyedUnarchiver unarchiveObjectWithData:savedPrintersData];
+    return printers;
 }
 
 - (void)setPrinters:(NSArray *)printers {

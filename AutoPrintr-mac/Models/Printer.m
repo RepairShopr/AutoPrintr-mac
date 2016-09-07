@@ -18,7 +18,7 @@
     Printer *printer = [self new];
     
     printer.name = name;
-    printer.documentsSettings = documentsSettings;
+    printer.documentsSettings = [NSMutableArray arrayWithArray:documentsSettings];
     
     return printer;
 }
@@ -68,6 +68,41 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeObject:self.documentsSettings forKey:@"documentsSettings"];
+}
+
+#pragma mark - Document Settings
+
+#warning - reimplement this methods
+- (DocumentSettings *)settingsLetterInvoice {
+    return self.documentsSettings[0];
+}
+
+- (void)setSettingsLetterInvoice:(DocumentSettings *)settingsLetterInvoice {
+    [self.documentsSettings replaceObjectAtIndex:0 withObject:settingsLetterInvoice];
+}
+
+- (DocumentSettings *)settingsLetterEstimate {
+    return self.documentsSettings[1];
+}
+
+- (void)setSettingsLetterEstimate:(DocumentSettings *)settingsLetterEstimate {
+    [self.documentsSettings replaceObjectAtIndex:1 withObject:settingsLetterEstimate];
+}
+
+- (DocumentSettings *)settingsLetterTicket {
+    return self.documentsSettings[2];
+}
+
+- (void)setSettingsLetterTicket:(DocumentSettings *)settingsLetterTicket {
+    [self.documentsSettings replaceObjectAtIndex:2 withObject:settingsLetterTicket];
+}
+
+- (DocumentSettings *)settingsLetterIntakeForm {
+    return self.documentsSettings[3];
+}
+
+- (void)setSettingsLetterIntakeForm:(DocumentSettings *)settingsLetterIntakeForm {
+    [self.documentsSettings replaceObjectAtIndex:3 withObject:settingsLetterIntakeForm];
 }
 
 @end

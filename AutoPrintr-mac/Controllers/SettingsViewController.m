@@ -8,18 +8,13 @@
 
 #import "SettingsViewController.h"
 #import "DataManager.h"
+#import "Printer.h"
 
 @interface SettingsViewController ()
-@property (weak) IBOutlet NSButton *ticketsButton;
-@property (weak) IBOutlet NSButton *ticketReceiptsButton;
-@property (weak) IBOutlet NSButton *intakeFormsButton;
-@property (weak) IBOutlet NSButton *invoicesButton;
-@property (weak) IBOutlet NSButton *receiptsButton;
-@property (weak) IBOutlet NSButton *customerLabelsButton;
-@property (weak) IBOutlet NSButton *assetLabelsButton;
-@property (weak) IBOutlet NSButton *ticketLabelsButton;
-
 @property (weak) IBOutlet NSCollectionView *collectionView;
+@property (strong) IBOutlet NSArrayController *printersController;
+
+@property (strong, nonatomic) NSMutableArray *printers;
 @end
 
 @implementation SettingsViewController
@@ -29,11 +24,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.printers = [NSMutableArray array];
+    [self.printersController addObjects:[DataManager shared].printers];
 }
 
 #pragma mark - Buttons Actions
 
 - (IBAction)didTapSaveButton:(id)sender {
+    [DataManager shared].printers = self.printers;
 }
 
 @end
