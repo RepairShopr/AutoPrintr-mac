@@ -28,7 +28,7 @@
 
 + (instancetype)createDefaultSettingsForDocumentType:(DocumentType)documentType {
     return [self createWithType:documentType
-                       quantity:7
+                       quantity:0
                         enabled:NO
           autoPrintFromTriggers:NO];
 }

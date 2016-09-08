@@ -14,11 +14,14 @@
 
 #pragma mark - Constructor 
 
-+ (instancetype)createWithName:(NSString *)name documentsSettings:(NSArray *)documentsSettings {
++ (instancetype)createWithName:(NSString *)name
+             documentsSettings:(NSArray *)documentsSettings
+                    registerId:(NSNumber *)registerId {
     Printer *printer = [self new];
     
     printer.name = name;
     printer.documentsSettings = [NSMutableArray arrayWithArray:documentsSettings];
+    printer.registerId = registerId;
     
     return printer;
 }
@@ -47,7 +50,8 @@
     for (NSString *printerName in printersName) {
         if (printerName.length) {
             [result addObject:[self createWithName:printerName
-                                 documentsSettings:[DocumentSettings defaultSettings]]];
+                                 documentsSettings:[DocumentSettings defaultSettings]
+                                        registerId:nil]];
         }
     }
     
@@ -61,6 +65,7 @@
     if (self != nil) {
         self.name = [aDecoder decodeObjectForKey:@"name"];
         self.documentsSettings = [aDecoder decodeObjectForKey:@"documentsSettings"];
+        self.registerId = [aDecoder decodeObjectForKey:@"registerId"];
     }
     return self;
 }
@@ -68,41 +73,137 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeObject:self.documentsSettings forKey:@"documentsSettings"];
+    [aCoder encodeObject:self.registerId forKey:@"registerId"];
 }
 
 #pragma mark - Document Settings
 
-#warning - reimplement this methods
 - (DocumentSettings *)settingsLetterInvoice {
-    return self.documentsSettings[0];
+    return [self documentSettingsWithType:DocTypeLetterInvoice];
 }
 
 - (void)setSettingsLetterInvoice:(DocumentSettings *)settingsLetterInvoice {
-    [self.documentsSettings replaceObjectAtIndex:0 withObject:settingsLetterInvoice];
+    [self.documentsSettings replaceObjectAtIndex:[self indexOfDocumentSettingsWithType:DocTypeLetterInvoice]
+                                      withObject:settingsLetterInvoice];
 }
 
 - (DocumentSettings *)settingsLetterEstimate {
-    return self.documentsSettings[1];
+    return [self documentSettingsWithType:DocTypeLetterEstimate];
 }
 
 - (void)setSettingsLetterEstimate:(DocumentSettings *)settingsLetterEstimate {
-    [self.documentsSettings replaceObjectAtIndex:1 withObject:settingsLetterEstimate];
+    [self.documentsSettings replaceObjectAtIndex:[self indexOfDocumentSettingsWithType:DocTypeLetterEstimate]
+                                      withObject:settingsLetterEstimate];
 }
 
 - (DocumentSettings *)settingsLetterTicket {
-    return self.documentsSettings[2];
+    return [self documentSettingsWithType:DocTypeLetterTicket];
 }
 
 - (void)setSettingsLetterTicket:(DocumentSettings *)settingsLetterTicket {
-    [self.documentsSettings replaceObjectAtIndex:2 withObject:settingsLetterTicket];
+    [self.documentsSettings replaceObjectAtIndex:[self indexOfDocumentSettingsWithType:DocTypeLetterTicket]
+                                      withObject:settingsLetterTicket];
 }
 
 - (DocumentSettings *)settingsLetterIntakeForm {
-    return self.documentsSettings[3];
+    return [self documentSettingsWithType:DocTypeLetterIntakeForm];
 }
 
 - (void)setSettingsLetterIntakeForm:(DocumentSettings *)settingsLetterIntakeForm {
-    [self.documentsSettings replaceObjectAtIndex:3 withObject:settingsLetterIntakeForm];
+    [self.documentsSettings replaceObjectAtIndex:[self indexOfDocumentSettingsWithType:DocTypeLetterIntakeForm]
+                                      withObject:settingsLetterIntakeForm];
+}
+
+- (DocumentSettings *)settingsReceiptReceipt {
+    return [self documentSettingsWithType:DocTypeReceiptReceipt];
+}
+
+- (void)setSettingsReceiptReceipt:(DocumentSettings *)settingsReceiptReceipt {
+    [self.documentsSettings replaceObjectAtIndex:[self indexOfDocumentSettingsWithType:DocTypeReceiptReceipt]
+                                      withObject:settingsReceiptReceipt];
+}
+
+- (DocumentSettings *)settingsReceiptZReport {
+    return [self documentSettingsWithType:DocTypeReceiptZReport];
+}
+
+- (void)setSettingsReceiptZReport:(DocumentSettings *)settingsReceiptZReport {
+    [self.documentsSettings replaceObjectAtIndex:[self indexOfDocumentSettingsWithType:DocTypeReceiptZReport]
+                                      withObject:settingsReceiptZReport];
+}
+
+- (DocumentSettings *)settingsReceiptTicketReceipt {
+    return [self documentSettingsWithType:DocTypeReceiptTicketReceipt];
+}
+
+- (void)setSettingsReceiptTicketReceipt:(DocumentSettings *)settingsReceiptTicketReceipt {
+    [self.documentsSettings replaceObjectAtIndex:[self indexOfDocumentSettingsWithType:DocTypeReceiptTicketReceipt]
+                                      withObject:settingsReceiptTicketReceipt];
+}
+
+- (DocumentSettings *)settingsReceiptPopDrawer {
+    return [self documentSettingsWithType:DocTypeReceiptPopDrawer];
+}
+
+- (void)setSettingsReceiptPopDrawer:(DocumentSettings *)settingsReceiptPopDrawer {
+    [self.documentsSettings replaceObjectAtIndex:[self indexOfDocumentSettingsWithType:DocTypeReceiptPopDrawer]
+                                      withObject:settingsReceiptPopDrawer];
+}
+
+- (DocumentSettings *)settingsReceiptAdjustment {
+    return [self documentSettingsWithType:DocTypeReceiptAdjustment];
+}
+
+- (void)setSettingsReceiptAdjustment:(DocumentSettings *)settingsReceiptAdjustment {
+    [self.documentsSettings replaceObjectAtIndex:[self indexOfDocumentSettingsWithType:DocTypeReceiptAdjustment]
+                                      withObject:settingsReceiptAdjustment];
+}
+
+- (DocumentSettings *)settingsLabelCustomerID {
+    return [self documentSettingsWithType:DocTypeLabelCustomerID];
+}
+
+- (void)setSettingsLabelCustomerID:(DocumentSettings *)settingsLabelCustomerID {
+    [self.documentsSettings replaceObjectAtIndex:[self indexOfDocumentSettingsWithType:DocTypeLabelCustomerID]
+                                      withObject:settingsLabelCustomerID];
+}
+
+- (DocumentSettings *)settingsLabelAsset {
+    return [self documentSettingsWithType:DocTypeLabelAsset];
+}
+
+- (void)setSettingsLabelAsset:(DocumentSettings *)settingsLabelAsset {
+    [self.documentsSettings replaceObjectAtIndex:[self indexOfDocumentSettingsWithType:DocTypeLabelAsset]
+                                      withObject:settingsLabelAsset];
+}
+
+- (DocumentSettings *)settingsLabelTicketLabel {
+    return [self documentSettingsWithType:DocTypeLabelTicketLabel];
+}
+
+- (void)setSettingsLabelTicketLabel:(DocumentSettings *)settingsLabelTicketLabel {
+    [self.documentsSettings replaceObjectAtIndex:[self indexOfDocumentSettingsWithType:DocTypeLabelTicketLabel]
+                                      withObject:settingsLabelTicketLabel];
+}
+
+#pragma mark - Helpers
+
+- (DocumentSettings *)documentSettingsWithType:(DocumentType)documentType {
+    for (DocumentSettings *settings in self.documentsSettings) {
+        if (settings.documentType == documentType) {
+            return settings;
+        }
+    }
+    return nil;
+}
+
+- (NSInteger)indexOfDocumentSettingsWithType:(DocumentType)documentType {
+    for (DocumentSettings *settings in self.documentsSettings) {
+        if (settings.documentType == documentType) {
+            return [self.documentsSettings indexOfObject:settings];
+        }
+    }
+    return 0;
 }
 
 @end

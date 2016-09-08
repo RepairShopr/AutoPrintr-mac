@@ -9,11 +9,13 @@
 #import "SettingsViewController.h"
 #import "DataManager.h"
 #import "Printer.h"
+#import "Register.h"
 
 @interface SettingsViewController ()
-@property (weak) IBOutlet NSCollectionView *collectionView;
 @property (strong) IBOutlet NSArrayController *printersController;
+@property (strong) IBOutlet NSArrayController *registersController;
 
+@property (strong, nonatomic) NSMutableArray *registersIds;
 @property (strong, nonatomic) NSMutableArray *printers;
 @end
 
@@ -26,6 +28,14 @@
     
     self.printers = [NSMutableArray array];
     [self.printersController addObjects:[DataManager shared].printers];
+    
+    self.registersIds = [NSMutableArray array];
+    
+    NSArray *registers = [DataManager shared].registers;
+    [self.registersController addObject:[NSNull null]];
+    for (Register *cashRegister in registers) {
+        [self.registersController addObject:cashRegister.registerId];
+    }
 }
 
 #pragma mark - Buttons Actions

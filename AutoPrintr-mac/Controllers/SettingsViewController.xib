@@ -7,8 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SettingsViewController">
             <connections>
-                <outlet property="collectionView" destination="tsa-Mm-M8Z" id="R02-xq-Ugb"/>
                 <outlet property="printersController" destination="cyj-xM-q8M" id="r6D-zq-fK9"/>
+                <outlet property="registersController" destination="4p7-g5-cgV" id="IBv-vX-vnJ"/>
                 <outlet property="view" destination="gTh-gq-CNJ" id="cde-IY-xzT"/>
             </connections>
         </customObject>
@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec7-DB-Jkf">
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="ec7-DB-Jkf">
                     <rect key="frame" x="120" y="60" width="680" height="540"/>
                     <clipView key="contentView" id="iw8-FB-Oa3">
                         <rect key="frame" x="1" y="1" width="678" height="538"/>
@@ -155,6 +155,14 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6M3-r9-bbs">
+                    <rect key="frame" x="8" y="89" width="64" height="19"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Register" id="fi6-AW-q6J">
+                        <font key="font" metaFont="system" size="16"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WDo-AY-IPb">
                     <rect key="frame" x="21" y="556" width="73" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Printers" id="7t5-bi-vMR">
@@ -178,6 +186,7 @@
                 <constraint firstItem="x42-3h-cm4" firstAttribute="leading" secondItem="gTh-gq-CNJ" secondAttribute="leading" constant="10" id="JZv-s2-vmY"/>
                 <constraint firstItem="eAc-KQ-ojg" firstAttribute="top" secondItem="WDo-AY-IPb" secondAttribute="bottom" constant="25" id="LAD-nx-b4Z"/>
                 <constraint firstItem="Ohf-yk-1ko" firstAttribute="leading" secondItem="gTh-gq-CNJ" secondAttribute="leading" constant="10" id="NKh-a2-A9A"/>
+                <constraint firstItem="6M3-r9-bbs" firstAttribute="leading" secondItem="gTh-gq-CNJ" secondAttribute="leading" constant="10" id="Q73-lA-W2Y"/>
                 <constraint firstItem="VJd-iE-BhG" firstAttribute="top" secondItem="LZ9-CD-a7u" secondAttribute="bottom" constant="15" id="Qpa-2V-jSS"/>
                 <constraint firstItem="RiE-rO-goK" firstAttribute="top" secondItem="sot-7F-qXA" secondAttribute="bottom" constant="15" id="UBO-Q3-Slg"/>
                 <constraint firstItem="unq-cb-Q36" firstAttribute="leading" secondItem="gTh-gq-CNJ" secondAttribute="leading" constant="10" id="VPR-Ij-ZoL"/>
@@ -194,6 +203,7 @@
                 <constraint firstItem="KuZ-Bd-nfE" firstAttribute="leading" secondItem="gTh-gq-CNJ" secondAttribute="leading" constant="10" id="jkm-R4-vhF"/>
                 <constraint firstItem="ec7-DB-Jkf" firstAttribute="leading" secondItem="gTh-gq-CNJ" secondAttribute="leading" constant="120" id="jmB-42-YDE"/>
                 <constraint firstAttribute="bottom" secondItem="jaf-nO-cHI" secondAttribute="bottom" constant="13" id="keY-SG-AHZ"/>
+                <constraint firstItem="6M3-r9-bbs" firstAttribute="top" secondItem="x42-3h-cm4" secondAttribute="bottom" constant="30" id="mIE-gM-ZIc"/>
                 <constraint firstItem="nge-dN-jlo" firstAttribute="top" secondItem="Y2o-p5-f3F" secondAttribute="bottom" constant="15" id="pMt-Nc-hB9"/>
                 <constraint firstItem="Y2o-p5-f3F" firstAttribute="top" secondItem="unq-cb-Q36" secondAttribute="bottom" constant="15" id="tup-MQ-JP8"/>
                 <constraint firstItem="Y2o-p5-f3F" firstAttribute="leading" secondItem="gTh-gq-CNJ" secondAttribute="leading" constant="10" id="yiU-aE-DuZ"/>
@@ -206,11 +216,11 @@
             </connections>
         </collectionViewItem>
         <customView id="bWV-96-t0C">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="540"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="538"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZFv-WY-mPN">
-                    <rect key="frame" x="91" y="496" width="118" height="24"/>
+                    <rect key="frame" x="91" y="494" width="118" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Printer name" id="ifs-Pu-s1v">
                         <font key="font" metaFont="system" size="20"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -220,8 +230,8 @@
                         <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.name" id="rsP-cq-DvW"/>
                     </connections>
                 </textField>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RJp-Do-fHS">
-                    <rect key="frame" x="8" y="454" width="71" height="18"/>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="RJp-Do-fHS">
+                    <rect key="frame" x="8" y="282" width="71" height="18"/>
                     <buttonCell key="cell" type="check" title="Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="o8e-xM-wSf">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -230,8 +240,8 @@
                         <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterInvoice.enabled" id="6mt-eT-plF"/>
                     </connections>
                 </button>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jP0-2q-Zcg">
-                    <rect key="frame" x="158" y="454" width="134" height="18"/>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="jP0-2q-Zcg">
+                    <rect key="frame" x="158" y="282" width="134" height="18"/>
                     <buttonCell key="cell" type="check" title="Print from triggers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="fSf-UA-yO9">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -240,15 +250,18 @@
                         <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterInvoice.autoPrintFromTriggers" id="9Ew-aD-lr4"/>
                     </connections>
                 </button>
-                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ksC-sO-664">
-                    <rect key="frame" x="131" y="449" width="19" height="27"/>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ksC-sO-664">
+                    <rect key="frame" x="131" y="277" width="19" height="27"/>
                     <stepperCell key="cell" continuous="YES" alignment="left" maxValue="15" id="Mu3-Pb-6Jj"/>
                     <connections>
                         <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterInvoice.quantity" id="SiI-vi-vMY"/>
                     </connections>
                 </stepper>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e0V-yg-hb5">
-                    <rect key="frame" x="90" y="452" width="40" height="22"/>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e0V-yg-hb5">
+                    <rect key="frame" x="90" y="280" width="40" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="6M4-UF-MwU"/>
+                    </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ZYH-d8-pb1">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="9PO-Lk-zsE"/>
                         <font key="font" metaFont="system"/>
@@ -259,12 +272,588 @@
                         <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterInvoice.quantity" id="bVn-IC-CPl"/>
                     </connections>
                 </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="6Tq-rJ-VdL">
+                    <rect key="frame" x="8" y="350" width="71" height="18"/>
+                    <buttonCell key="cell" type="check" title="Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nok-40-Kzg">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterEstimate.enabled" id="eSM-sg-fTC"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="x1K-9M-XdR">
+                    <rect key="frame" x="158" y="350" width="134" height="18"/>
+                    <buttonCell key="cell" type="check" title="Print from triggers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nSa-lk-sBv">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterEstimate.autoPrintFromTriggers" id="Xtv-d4-J7i"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HsN-uw-zxj">
+                    <rect key="frame" x="131" y="345" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="15" id="zaV-xK-miD"/>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterEstimate.quantity" id="Xcs-ls-mnd"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bv3-qY-Wfr">
+                    <rect key="frame" x="90" y="348" width="40" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Rnr-Ng-Px3"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="egF-ca-0ne">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="9lu-Ec-RXn"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterEstimate.quantity" id="Sbi-4i-hhs"/>
+                    </connections>
+                </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="Oeu-MB-jzP">
+                    <rect key="frame" x="8" y="452" width="71" height="18"/>
+                    <buttonCell key="cell" type="check" title="Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="mPA-ur-ADs">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptAdjustment.enabled" id="Qja-nK-G4x"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="vLF-Tm-HZ6">
+                    <rect key="frame" x="158" y="452" width="134" height="18"/>
+                    <buttonCell key="cell" type="check" title="Print from triggers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="bID-Up-ofm">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptAdjustment.autoPrintFromTriggers" id="VSd-BR-8mu"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ceF-dt-Bqb">
+                    <rect key="frame" x="131" y="447" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="15" id="r5l-li-ugt"/>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptAdjustment.quantity" id="0wQ-S0-q89"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5hp-if-Erp">
+                    <rect key="frame" x="90" y="450" width="40" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="iiU-kS-Vvj"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="zlI-4I-bsU">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="57A-jX-9fD"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptAdjustment.quantity" id="ilj-jN-xXp"/>
+                    </connections>
+                </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="eHz-b6-Be3">
+                    <rect key="frame" x="8" y="146" width="71" height="18"/>
+                    <buttonCell key="cell" type="check" title="Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KJm-Lb-7ez">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLabelTicketLabel.enabled" id="V0G-9R-BJ1"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="E9S-eS-4QQ">
+                    <rect key="frame" x="158" y="146" width="134" height="18"/>
+                    <buttonCell key="cell" type="check" title="Print from triggers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="c6R-0x-toJ">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLabelTicketLabel.autoPrintFromTriggers" id="x4V-GP-DYR"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zH9-4L-LK7">
+                    <rect key="frame" x="131" y="141" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="15" id="gLL-S4-y7Q"/>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLabelTicketLabel.quantity" id="pWD-Iq-t2y"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Swm-Fg-T70">
+                    <rect key="frame" x="90" y="144" width="40" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Qqs-eh-Axz"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="lEh-Ji-UfM">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="wM2-ZQ-ppx"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLabelTicketLabel.quantity" id="6Ha-JK-8GW"/>
+                    </connections>
+                </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="2rG-f5-HqF">
+                    <rect key="frame" x="8" y="384" width="71" height="18"/>
+                    <buttonCell key="cell" type="check" title="Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ljS-jn-mJZ">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLabelCustomerID.enabled" id="Rzd-YZ-KhN"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="jPz-JK-uS4">
+                    <rect key="frame" x="158" y="384" width="134" height="18"/>
+                    <buttonCell key="cell" type="check" title="Print from triggers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ENe-NH-X2p">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLabelCustomerID.autoPrintFromTriggers" id="kJe-rT-iEt"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qDS-Dj-ljD">
+                    <rect key="frame" x="131" y="379" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="15" id="wfQ-9s-CmS"/>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLabelCustomerID.quantity" id="ChW-DM-Mqu"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gsr-qV-sxG">
+                    <rect key="frame" x="90" y="382" width="40" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="2UN-87-9Z2"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ukc-8E-pM6">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="G5B-Vi-eRe"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLabelCustomerID.quantity" id="Wen-cl-wD2"/>
+                    </connections>
+                </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="d9f-cy-4wc">
+                    <rect key="frame" x="8" y="418" width="71" height="18"/>
+                    <buttonCell key="cell" type="check" title="Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="kbO-P5-rVQ">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLabelAsset.enabled" id="zBe-bt-1cU"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="E8H-yF-HGg">
+                    <rect key="frame" x="158" y="418" width="134" height="18"/>
+                    <buttonCell key="cell" type="check" title="Print from triggers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="sZ3-qd-YZM">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLabelAsset.autoPrintFromTriggers" id="JzL-w6-JFF"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="L26-yO-2Ah">
+                    <rect key="frame" x="131" y="413" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="15" id="TjN-Iw-Aja"/>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLabelAsset.quantity" id="4iN-hx-dQb"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mf0-sm-2IS">
+                    <rect key="frame" x="90" y="416" width="40" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="CQB-o5-o19"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="96v-tU-9U0">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="hiX-VF-ZhM"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLabelAsset.quantity" id="Ntz-eu-fDQ"/>
+                    </connections>
+                </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="PW3-dA-Wuk">
+                    <rect key="frame" x="8" y="248" width="71" height="18"/>
+                    <buttonCell key="cell" type="check" title="Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="doM-0I-dm8">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptPopDrawer.enabled" id="KAh-Bc-vU5"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="0iW-1X-Rlp">
+                    <rect key="frame" x="158" y="248" width="134" height="18"/>
+                    <buttonCell key="cell" type="check" title="Print from triggers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="aB6-rK-kvg">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptPopDrawer.autoPrintFromTriggers" id="TdZ-EI-adA"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3JB-uj-Bla">
+                    <rect key="frame" x="131" y="243" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="15" id="wVQ-t1-SG2"/>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptPopDrawer.quantity" id="NI6-G0-FjF"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ork-cN-C2D">
+                    <rect key="frame" x="90" y="246" width="40" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="YMv-us-wh5"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="5JT-2o-rln">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="VRT-Wx-OYh"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptPopDrawer.quantity" id="VVq-Dt-xNG"/>
+                    </connections>
+                </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="1kW-ld-319">
+                    <rect key="frame" x="8" y="112" width="71" height="18"/>
+                    <buttonCell key="cell" type="check" title="Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gQs-WA-Ej3">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptTicketReceipt.enabled" id="V13-MT-cT7"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="AdL-5l-aQY">
+                    <rect key="frame" x="158" y="112" width="134" height="18"/>
+                    <buttonCell key="cell" type="check" title="Print from triggers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="JCg-RQ-4hh">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptTicketReceipt.autoPrintFromTriggers" id="pWT-Th-vHx"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T7F-6z-fPc">
+                    <rect key="frame" x="131" y="107" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="15" id="aNI-0o-gR3"/>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptTicketReceipt.quantity" id="pFc-QA-amb"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZI7-eB-xqd">
+                    <rect key="frame" x="90" y="110" width="40" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="zoV-Kk-aGK"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="sf7-4a-HcQ">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="yGc-QV-wj4"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptTicketReceipt.quantity" id="Uo7-rZ-yUs"/>
+                    </connections>
+                </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="jLW-Jz-CVm">
+                    <rect key="frame" x="8" y="180" width="71" height="18"/>
+                    <buttonCell key="cell" type="check" title="Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="4Qo-Ro-Eph">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterTicket.enabled" id="TAW-j7-UKp"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="9on-Hi-u3P">
+                    <rect key="frame" x="158" y="180" width="134" height="18"/>
+                    <buttonCell key="cell" type="check" title="Print from triggers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="sxb-Xu-7Gd">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterTicket.autoPrintFromTriggers" id="ban-lx-wf4"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="w2e-Sb-FNl">
+                    <rect key="frame" x="131" y="175" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="15" id="Ooc-GI-n2R"/>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterTicket.quantity" id="y8C-dn-MRU"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tUd-N1-UpF">
+                    <rect key="frame" x="90" y="178" width="40" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Qag-B7-PqL"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="r61-CL-It3">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="1e9-TB-RQi"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterTicket.quantity" id="A7d-wM-5yV"/>
+                    </connections>
+                </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="7mC-V8-QOP">
+                    <rect key="frame" x="8" y="316" width="71" height="18"/>
+                    <buttonCell key="cell" type="check" title="Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="5vg-fU-ifl">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterIntakeForm.enabled" id="xaH-BO-tvW"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="Jod-v7-Gfx">
+                    <rect key="frame" x="158" y="316" width="134" height="18"/>
+                    <buttonCell key="cell" type="check" title="Print from triggers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dOA-jf-2EI">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterIntakeForm.autoPrintFromTriggers" id="hda-SM-L2e"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Efh-L2-yED">
+                    <rect key="frame" x="131" y="311" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="15" id="to3-i5-5PM"/>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterIntakeForm.quantity" id="kDL-JA-eNX"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VYm-h2-ONk">
+                    <rect key="frame" x="90" y="314" width="40" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="fAg-6k-lpY"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="u9F-E5-ctI">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="Tbb-tV-c24"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsLetterIntakeForm.quantity" id="YTt-dQ-iNU"/>
+                    </connections>
+                </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="MSC-b2-lOV">
+                    <rect key="frame" x="8" y="214" width="71" height="18"/>
+                    <buttonCell key="cell" type="check" title="Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="xjS-UZ-HeV">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptReceipt.enabled" id="pww-Bu-HL6"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="PpQ-BZ-T0b">
+                    <rect key="frame" x="158" y="214" width="134" height="18"/>
+                    <buttonCell key="cell" type="check" title="Print from triggers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="T0D-9y-mq5">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptReceipt.autoPrintFromTriggers" id="6S0-um-JZc"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nIK-ql-47v">
+                    <rect key="frame" x="131" y="209" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="15" id="bL9-7b-noQ"/>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptReceipt.quantity" id="YBO-L5-rVe"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fA7-Gi-meC">
+                    <rect key="frame" x="90" y="212" width="40" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="XYf-ni-qeb"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Tq4-bZ-1Z9">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="KC5-k0-dlL"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptReceipt.quantity" id="b7d-jB-qNc"/>
+                    </connections>
+                </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="KEf-8D-qVz">
+                    <rect key="frame" x="8" y="78" width="71" height="18"/>
+                    <buttonCell key="cell" type="check" title="Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="mcR-An-6Fp">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptZReport.enabled" id="J0t-AF-fuU"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="ZDE-hj-0Zu">
+                    <rect key="frame" x="158" y="78" width="134" height="18"/>
+                    <buttonCell key="cell" type="check" title="Print from triggers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="orx-Qy-UsC">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptZReport.autoPrintFromTriggers" id="0DE-iU-0CU"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ELi-DQ-LAk">
+                    <rect key="frame" x="131" y="73" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="15" id="XmF-WT-mrk"/>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptZReport.quantity" id="cEx-EH-7Mw"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a0K-dK-9B5">
+                    <rect key="frame" x="90" y="76" width="40" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="7DJ-re-MW1"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2Bf-sd-fGs">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="RKb-5u-xYq"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Vq3-8N-h3f" name="value" keyPath="representedObject.settingsReceiptZReport.quantity" id="Ksc-G5-ass"/>
+                    </connections>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PlD-Pq-446">
+                    <rect key="frame" x="8" y="23" width="285" height="26"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="PNX-LU-lCd">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="I66-p6-taC">
+                            <items>
+                                <menuItem title="None" id="ZUS-7O-YgG"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="4p7-g5-cgV" name="contentValues" keyPath="arrangedObjects.description" id="XU2-B2-Y9i"/>
+                    </connections>
+                </popUpButton>
             </subviews>
             <constraints>
+                <constraint firstItem="Swm-Fg-T70" firstAttribute="leading" secondItem="eHz-b6-Be3" secondAttribute="trailing" constant="13" id="0xJ-IU-vk1"/>
+                <constraint firstItem="RJp-Do-fHS" firstAttribute="top" secondItem="7mC-V8-QOP" secondAttribute="bottom" constant="20" id="1sF-NX-Boj"/>
+                <constraint firstItem="ZI7-eB-xqd" firstAttribute="leading" secondItem="1kW-ld-319" secondAttribute="trailing" constant="13" id="1y6-ez-C3c"/>
+                <constraint firstItem="2rG-f5-HqF" firstAttribute="top" secondItem="d9f-cy-4wc" secondAttribute="bottom" constant="20" id="2S4-AQ-1vK"/>
+                <constraint firstItem="w2e-Sb-FNl" firstAttribute="top" secondItem="nIK-ql-47v" secondAttribute="bottom" constant="12" id="3EQ-oQ-pvT"/>
+                <constraint firstItem="T7F-6z-fPc" firstAttribute="leading" secondItem="ZI7-eB-xqd" secondAttribute="trailing" constant="4" id="3Ls-W6-9RZ"/>
+                <constraint firstItem="PlD-Pq-446" firstAttribute="top" secondItem="a0K-dK-9B5" secondAttribute="bottom" constant="29" id="3OC-r3-aU7"/>
+                <constraint firstItem="ZI7-eB-xqd" firstAttribute="top" secondItem="Swm-Fg-T70" secondAttribute="bottom" constant="12" id="44S-WE-l3N"/>
+                <constraint firstItem="0iW-1X-Rlp" firstAttribute="top" secondItem="jP0-2q-Zcg" secondAttribute="bottom" constant="20" id="4O6-lg-B3M"/>
+                <constraint firstItem="jPz-JK-uS4" firstAttribute="top" secondItem="E8H-yF-HGg" secondAttribute="bottom" constant="20" id="4w9-HI-LHd"/>
+                <constraint firstItem="AdL-5l-aQY" firstAttribute="top" secondItem="E9S-eS-4QQ" secondAttribute="bottom" constant="20" id="4x3-ey-Q36"/>
+                <constraint firstItem="fA7-Gi-meC" firstAttribute="top" secondItem="Ork-cN-C2D" secondAttribute="bottom" constant="12" id="6SQ-8C-vlF"/>
+                <constraint firstItem="6Tq-rJ-VdL" firstAttribute="top" secondItem="2rG-f5-HqF" secondAttribute="bottom" constant="20" id="7aW-8x-ScG"/>
+                <constraint firstItem="e0V-yg-hb5" firstAttribute="leading" secondItem="RJp-Do-fHS" secondAttribute="trailing" constant="13" id="85o-ai-VyX"/>
+                <constraint firstItem="Ork-cN-C2D" firstAttribute="leading" secondItem="PW3-dA-Wuk" secondAttribute="trailing" constant="13" id="8U9-ZX-6am"/>
+                <constraint firstItem="mf0-sm-2IS" firstAttribute="top" secondItem="5hp-if-Erp" secondAttribute="bottom" constant="12" id="9g0-bN-2LZ"/>
+                <constraint firstItem="6Tq-rJ-VdL" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="AHZ-wp-UVe"/>
+                <constraint firstItem="3JB-uj-Bla" firstAttribute="top" secondItem="ksC-sO-664" secondAttribute="bottom" constant="12" id="ATy-z1-4eT"/>
+                <constraint firstAttribute="trailing" secondItem="vLF-Tm-HZ6" secondAttribute="trailing" constant="10" id="Aom-sU-AeV"/>
+                <constraint firstItem="7mC-V8-QOP" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="BM0-3Z-sDY"/>
+                <constraint firstItem="Bv3-qY-Wfr" firstAttribute="leading" secondItem="6Tq-rJ-VdL" secondAttribute="trailing" constant="13" id="CHN-bn-2Ld"/>
+                <constraint firstItem="Oeu-MB-jzP" firstAttribute="top" secondItem="ZFv-WY-mPN" secondAttribute="bottom" constant="26" id="Dig-RK-Bc4"/>
+                <constraint firstItem="qDS-Dj-ljD" firstAttribute="leading" secondItem="gsr-qV-sxG" secondAttribute="trailing" constant="4" id="EEl-Qn-VQw"/>
+                <constraint firstItem="tUd-N1-UpF" firstAttribute="top" secondItem="fA7-Gi-meC" secondAttribute="bottom" constant="12" id="ExE-zz-AKn"/>
+                <constraint firstItem="RJp-Do-fHS" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="FFK-fl-jxf"/>
+                <constraint firstItem="d9f-cy-4wc" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="FJv-Dh-w7G"/>
+                <constraint firstItem="nIK-ql-47v" firstAttribute="leading" secondItem="fA7-Gi-meC" secondAttribute="trailing" constant="4" id="FNP-tB-XY1"/>
+                <constraint firstItem="1kW-ld-319" firstAttribute="top" secondItem="eHz-b6-Be3" secondAttribute="bottom" constant="20" id="FXh-zx-SmW"/>
+                <constraint firstItem="PW3-dA-Wuk" firstAttribute="top" secondItem="RJp-Do-fHS" secondAttribute="bottom" constant="20" id="G6Q-cM-9yK"/>
+                <constraint firstItem="5hp-if-Erp" firstAttribute="leading" secondItem="Oeu-MB-jzP" secondAttribute="trailing" constant="13" id="GDX-f4-2a8"/>
+                <constraint firstItem="Jod-v7-Gfx" firstAttribute="top" secondItem="x1K-9M-XdR" secondAttribute="bottom" constant="20" id="GXJ-0J-eIM"/>
+                <constraint firstItem="PW3-dA-Wuk" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="GrE-ul-EG5"/>
+                <constraint firstItem="ELi-DQ-LAk" firstAttribute="top" secondItem="T7F-6z-fPc" secondAttribute="bottom" constant="12" id="HEn-58-XXK"/>
+                <constraint firstItem="x1K-9M-XdR" firstAttribute="top" secondItem="jPz-JK-uS4" secondAttribute="bottom" constant="20" id="HUy-XC-b7o"/>
+                <constraint firstItem="Oeu-MB-jzP" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="HcD-te-d0M"/>
+                <constraint firstItem="PlD-Pq-446" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="I2E-C2-dJP"/>
+                <constraint firstAttribute="trailing" secondItem="x1K-9M-XdR" secondAttribute="trailing" constant="10" id="JNF-en-whZ"/>
+                <constraint firstItem="T7F-6z-fPc" firstAttribute="top" secondItem="zH9-4L-LK7" secondAttribute="bottom" constant="12" id="KDo-t2-ydc"/>
+                <constraint firstAttribute="trailing" secondItem="ZDE-hj-0Zu" secondAttribute="trailing" constant="10" id="Kau-cZ-bTw"/>
+                <constraint firstItem="a0K-dK-9B5" firstAttribute="top" secondItem="ZI7-eB-xqd" secondAttribute="bottom" constant="12" id="LKP-fw-CS6"/>
+                <constraint firstAttribute="trailing" secondItem="jP0-2q-Zcg" secondAttribute="trailing" constant="10" id="MBa-Le-LwS"/>
+                <constraint firstItem="HsN-uw-zxj" firstAttribute="top" secondItem="qDS-Dj-ljD" secondAttribute="bottom" constant="12" id="OFm-n0-Niz"/>
+                <constraint firstItem="2rG-f5-HqF" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="OVV-ka-LfN"/>
+                <constraint firstItem="Efh-L2-yED" firstAttribute="top" secondItem="HsN-uw-zxj" secondAttribute="bottom" constant="12" id="OmI-w3-oqR"/>
+                <constraint firstItem="a0K-dK-9B5" firstAttribute="leading" secondItem="KEf-8D-qVz" secondAttribute="trailing" constant="13" id="PkH-hF-XTY"/>
+                <constraint firstItem="eHz-b6-Be3" firstAttribute="top" secondItem="jLW-Jz-CVm" secondAttribute="bottom" constant="20" id="QQi-Ct-e9Q"/>
+                <constraint firstItem="HsN-uw-zxj" firstAttribute="leading" secondItem="Bv3-qY-Wfr" secondAttribute="trailing" constant="4" id="TRx-ZX-vbU"/>
+                <constraint firstItem="ksC-sO-664" firstAttribute="top" secondItem="Efh-L2-yED" secondAttribute="bottom" constant="12" id="TcH-Bd-pLC"/>
+                <constraint firstItem="ZDE-hj-0Zu" firstAttribute="top" secondItem="AdL-5l-aQY" secondAttribute="bottom" constant="20" id="TeZ-6Q-CIP"/>
+                <constraint firstItem="9on-Hi-u3P" firstAttribute="top" secondItem="PpQ-BZ-T0b" secondAttribute="bottom" constant="20" id="Vi4-4D-KZW"/>
+                <constraint firstItem="1kW-ld-319" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="VjJ-lb-Agt"/>
                 <constraint firstItem="ZFv-WY-mPN" firstAttribute="centerX" secondItem="bWV-96-t0C" secondAttribute="centerX" id="W1G-Gm-kRC"/>
+                <constraint firstAttribute="trailing" secondItem="PpQ-BZ-T0b" secondAttribute="trailing" constant="10" id="W2b-Hs-epI"/>
+                <constraint firstAttribute="trailing" secondItem="Jod-v7-Gfx" secondAttribute="trailing" constant="10" id="WJl-4B-gyb"/>
+                <constraint firstItem="zH9-4L-LK7" firstAttribute="top" secondItem="w2e-Sb-FNl" secondAttribute="bottom" constant="12" id="Wbf-7f-0p7"/>
+                <constraint firstAttribute="trailing" secondItem="AdL-5l-aQY" secondAttribute="trailing" constant="10" id="X3n-Gj-Q5q"/>
+                <constraint firstItem="qDS-Dj-ljD" firstAttribute="top" secondItem="L26-yO-2Ah" secondAttribute="bottom" constant="12" id="XR4-rM-vlf"/>
+                <constraint firstItem="ELi-DQ-LAk" firstAttribute="leading" secondItem="a0K-dK-9B5" secondAttribute="trailing" constant="4" id="XyE-SU-QRz"/>
+                <constraint firstItem="7mC-V8-QOP" firstAttribute="top" secondItem="6Tq-rJ-VdL" secondAttribute="bottom" constant="20" id="ZGQ-3n-nsm"/>
+                <constraint firstItem="jP0-2q-Zcg" firstAttribute="top" secondItem="Jod-v7-Gfx" secondAttribute="bottom" constant="20" id="ZMV-fa-n46"/>
+                <constraint firstItem="Efh-L2-yED" firstAttribute="leading" secondItem="VYm-h2-ONk" secondAttribute="trailing" constant="4" id="ZfY-hk-Be9"/>
+                <constraint firstItem="jLW-Jz-CVm" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="bGn-9f-8Yd"/>
+                <constraint firstItem="L26-yO-2Ah" firstAttribute="top" secondItem="ceF-dt-Bqb" secondAttribute="bottom" constant="12" id="bTV-QR-3fO"/>
+                <constraint firstItem="eHz-b6-Be3" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="bsA-Xg-SKS"/>
+                <constraint firstItem="MSC-b2-lOV" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="c0U-3f-ZcZ"/>
+                <constraint firstItem="gsr-qV-sxG" firstAttribute="leading" secondItem="2rG-f5-HqF" secondAttribute="trailing" constant="13" id="dDK-KC-37i"/>
+                <constraint firstItem="PpQ-BZ-T0b" firstAttribute="top" secondItem="0iW-1X-Rlp" secondAttribute="bottom" constant="20" id="dkQ-d3-BYr"/>
+                <constraint firstItem="nIK-ql-47v" firstAttribute="top" secondItem="3JB-uj-Bla" secondAttribute="bottom" constant="12" id="e5G-br-FA1"/>
+                <constraint firstItem="VYm-h2-ONk" firstAttribute="top" secondItem="Bv3-qY-Wfr" secondAttribute="bottom" constant="12" id="eHv-8C-eTA"/>
+                <constraint firstItem="ceF-dt-Bqb" firstAttribute="leading" secondItem="5hp-if-Erp" secondAttribute="trailing" constant="4" id="ejp-j4-X5c"/>
+                <constraint firstItem="KEf-8D-qVz" firstAttribute="top" secondItem="1kW-ld-319" secondAttribute="bottom" constant="20" id="eoW-Fb-yr7"/>
+                <constraint firstItem="L26-yO-2Ah" firstAttribute="leading" secondItem="mf0-sm-2IS" secondAttribute="trailing" constant="4" id="fWD-9A-QIS"/>
+                <constraint firstItem="mf0-sm-2IS" firstAttribute="leading" secondItem="d9f-cy-4wc" secondAttribute="trailing" constant="13" id="fpz-7M-qDG"/>
+                <constraint firstItem="3JB-uj-Bla" firstAttribute="leading" secondItem="Ork-cN-C2D" secondAttribute="trailing" constant="4" id="gdi-J9-Mhr"/>
+                <constraint firstItem="ceF-dt-Bqb" firstAttribute="top" secondItem="ZFv-WY-mPN" secondAttribute="bottom" constant="22" id="hFw-Ql-DxV"/>
+                <constraint firstItem="tUd-N1-UpF" firstAttribute="leading" secondItem="jLW-Jz-CVm" secondAttribute="trailing" constant="13" id="hPr-q6-A1Y"/>
+                <constraint firstItem="d9f-cy-4wc" firstAttribute="top" secondItem="Oeu-MB-jzP" secondAttribute="bottom" constant="20" id="hhk-by-yu3"/>
+                <constraint firstItem="Ork-cN-C2D" firstAttribute="top" secondItem="e0V-yg-hb5" secondAttribute="bottom" constant="12" id="ieb-C1-Vkg"/>
+                <constraint firstItem="E8H-yF-HGg" firstAttribute="top" secondItem="vLF-Tm-HZ6" secondAttribute="bottom" constant="20" id="ifF-Su-wKP"/>
+                <constraint firstItem="e0V-yg-hb5" firstAttribute="top" secondItem="VYm-h2-ONk" secondAttribute="bottom" constant="12" id="jAv-6J-q2f"/>
+                <constraint firstItem="5hp-if-Erp" firstAttribute="top" secondItem="ZFv-WY-mPN" secondAttribute="bottom" constant="22" id="k5X-d7-o1W"/>
+                <constraint firstAttribute="trailing" secondItem="E9S-eS-4QQ" secondAttribute="trailing" constant="10" id="kpP-e1-FoJ"/>
+                <constraint firstAttribute="trailing" secondItem="jPz-JK-uS4" secondAttribute="trailing" constant="10" id="lbf-47-1e0"/>
+                <constraint firstItem="Swm-Fg-T70" firstAttribute="top" secondItem="tUd-N1-UpF" secondAttribute="bottom" constant="12" id="lra-sV-KsU"/>
+                <constraint firstAttribute="trailing" secondItem="E8H-yF-HGg" secondAttribute="trailing" constant="10" id="mmy-9j-AmW"/>
+                <constraint firstItem="MSC-b2-lOV" firstAttribute="top" secondItem="PW3-dA-Wuk" secondAttribute="bottom" constant="20" id="nOS-k4-JL5"/>
+                <constraint firstItem="Bv3-qY-Wfr" firstAttribute="top" secondItem="gsr-qV-sxG" secondAttribute="bottom" constant="12" id="nt9-8P-X0r"/>
+                <constraint firstAttribute="trailing" secondItem="PlD-Pq-446" secondAttribute="trailing" constant="10" id="o3m-vS-JfR"/>
+                <constraint firstItem="jLW-Jz-CVm" firstAttribute="top" secondItem="MSC-b2-lOV" secondAttribute="bottom" constant="20" id="pzF-io-vMx"/>
+                <constraint firstItem="fA7-Gi-meC" firstAttribute="leading" secondItem="MSC-b2-lOV" secondAttribute="trailing" constant="13" id="qoZ-Np-FZG"/>
+                <constraint firstItem="ksC-sO-664" firstAttribute="leading" secondItem="e0V-yg-hb5" secondAttribute="trailing" constant="4" id="qok-Pe-zR2"/>
+                <constraint firstItem="VYm-h2-ONk" firstAttribute="leading" secondItem="7mC-V8-QOP" secondAttribute="trailing" constant="13" id="rOf-ib-eBq"/>
+                <constraint firstItem="KEf-8D-qVz" firstAttribute="leading" secondItem="bWV-96-t0C" secondAttribute="leading" constant="10" id="s3J-s3-MC0"/>
+                <constraint firstAttribute="trailing" secondItem="0iW-1X-Rlp" secondAttribute="trailing" constant="10" id="uQU-W2-G3c"/>
+                <constraint firstItem="w2e-Sb-FNl" firstAttribute="leading" secondItem="tUd-N1-UpF" secondAttribute="trailing" constant="4" id="umn-ZN-1cb"/>
+                <constraint firstItem="zH9-4L-LK7" firstAttribute="leading" secondItem="Swm-Fg-T70" secondAttribute="trailing" constant="4" id="wPt-2d-bZ5"/>
+                <constraint firstItem="gsr-qV-sxG" firstAttribute="top" secondItem="mf0-sm-2IS" secondAttribute="bottom" constant="12" id="wQP-Ng-UCJ"/>
+                <constraint firstItem="E9S-eS-4QQ" firstAttribute="top" secondItem="9on-Hi-u3P" secondAttribute="bottom" constant="20" id="xbZ-TU-LTs"/>
+                <constraint firstAttribute="trailing" secondItem="9on-Hi-u3P" secondAttribute="trailing" constant="10" id="xrL-ly-elm"/>
                 <constraint firstItem="ZFv-WY-mPN" firstAttribute="top" secondItem="bWV-96-t0C" secondAttribute="top" constant="20" id="yHY-Bd-Xl1"/>
+                <constraint firstItem="vLF-Tm-HZ6" firstAttribute="top" secondItem="ZFv-WY-mPN" secondAttribute="bottom" constant="26" id="zFX-i3-Iof"/>
             </constraints>
-            <point key="canvasLocation" x="262" y="345"/>
+            <point key="canvasLocation" x="199" y="281"/>
         </customView>
         <arrayController objectClassName="Printer" id="cyj-xM-q8M">
             <declaredKeys>
@@ -273,6 +862,11 @@
             </declaredKeys>
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="printers" id="h0N-FX-62I"/>
+            </connections>
+        </arrayController>
+        <arrayController objectClassName="NSNumber" id="4p7-g5-cgV">
+            <connections>
+                <binding destination="-2" name="contentArray" keyPath="registersIds" id="Yl1-wo-xpi"/>
             </connections>
         </arrayController>
         <userDefaultsController representsSharedInstance="YES" id="w8Q-S5-AIv"/>
