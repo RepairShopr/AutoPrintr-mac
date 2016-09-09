@@ -32,9 +32,9 @@
     self.registersIds = [NSMutableArray array];
     
     NSArray *registers = [DataManager shared].registers;
-    [self.registersController addObject:[NSNull null]];
+    [self.registersController addObject:@"None"];
     for (Register *cashRegister in registers) {
-        [self.registersController addObject:cashRegister.registerId];
+        [self.registersController addObject:[cashRegister.registerId stringValue]];
     }
 }
 
@@ -42,6 +42,7 @@
 
 - (IBAction)didTapSaveButton:(id)sender {
     [DataManager shared].printers = self.printers;
+    [self.view.window performClose:self];
 }
 
 @end

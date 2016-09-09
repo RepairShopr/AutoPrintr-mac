@@ -10,6 +10,7 @@
 #import "SelectLocationViewController.h"
 #import "LoginViewController.h"
 #import "DataManager.h"
+#import "PusherManager.h"
 
 @interface AppDelegate () <LoginDelegate>
 @property (weak) IBOutlet NSWindow *window;
@@ -89,7 +90,7 @@
 //    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
 //    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
-    // Insert code here to initialize your application
+    [[PusherManager shared] startListening];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

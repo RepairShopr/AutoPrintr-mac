@@ -22,6 +22,8 @@
 		A68809F41D78640A00520336 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68809F21D78640A00520336 /* SettingsViewController.xib */; };
 		A6C192B31D74B4A300D28CE7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C192B11D74B4A300D28CE7 /* LoginViewController.m */; };
 		A6C192B41D74B4A300D28CE7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */; };
+		A6E5707B1D82E73200AC51B0 /* PusherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E5707A1D82E73200AC51B0 /* PusherManager.m */; };
+		A6E570801D82F4D400AC51B0 /* PrintJob.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E5707F1D82F4D400AC51B0 /* PrintJob.m */; };
 		A6F1441F1D75A9F400621872 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1441E1D75A9F400621872 /* LoginRequest.m */; };
 		A6F144271D75B42C00621872 /* NSViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F144261D75B42C00621872 /* NSViewController+Alert.m */; };
 		A6F1442A1D75B43E00621872 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F144291D75B43E00621872 /* BaseRequest.m */; };
@@ -60,6 +62,11 @@
 		A6C192B01D74B4A300D28CE7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
 		A6C192B11D74B4A300D28CE7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
 		A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Controllers/LoginViewController.xib; sourceTree = "<group>"; };
+		A6E570791D82E73200AC51B0 /* PusherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PusherManager.h; path = Requests/PusherManager.h; sourceTree = "<group>"; };
+		A6E5707A1D82E73200AC51B0 /* PusherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PusherManager.m; path = Requests/PusherManager.m; sourceTree = "<group>"; };
+		A6E5707C1D82E98900AC51B0 /* AppKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKeys.h; sourceTree = "<group>"; };
+		A6E5707E1D82F4D400AC51B0 /* PrintJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrintJob.h; path = Models/PrintJob.h; sourceTree = "<group>"; };
+		A6E5707F1D82F4D400AC51B0 /* PrintJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrintJob.m; path = Models/PrintJob.m; sourceTree = "<group>"; };
 		A6F1441D1D75A9F400621872 /* LoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginRequest.h; path = Requests/LoginRequest.h; sourceTree = "<group>"; };
 		A6F1441E1D75A9F400621872 /* LoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginRequest.m; path = Requests/LoginRequest.m; sourceTree = "<group>"; };
 		A6F144251D75B42C00621872 /* NSViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSViewController+Alert.h"; path = "Helpers/NSViewController+Alert.h"; sourceTree = "<group>"; };
@@ -182,6 +189,7 @@
 		A66F3B061D7732DD003EC562 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A6E5707D1D82F4BC00AC51B0 /* PrintJob */,
 				A664355C1D7EE91F0026AE1B /* Register */,
 				A66435541D7DD0610026AE1B /* Printer */,
 				A66435501D7DAEDB0026AE1B /* DocumentSettings */,
@@ -203,7 +211,9 @@
 		A66F3B0B1D7735F1003EC562 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A6E570781D82E70C00AC51B0 /* PusherManager */,
 				A66F3B0C1D7735F9003EC562 /* DataManager */,
+				A6E5707C1D82E98900AC51B0 /* AppKeys.h */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -279,6 +289,24 @@
 				A6F1441E1D75A9F400621872 /* LoginRequest.m */,
 			);
 			name = LoginRequest;
+			sourceTree = "<group>";
+		};
+		A6E570781D82E70C00AC51B0 /* PusherManager */ = {
+			isa = PBXGroup;
+			children = (
+				A6E570791D82E73200AC51B0 /* PusherManager.h */,
+				A6E5707A1D82E73200AC51B0 /* PusherManager.m */,
+			);
+			name = PusherManager;
+			sourceTree = "<group>";
+		};
+		A6E5707D1D82F4BC00AC51B0 /* PrintJob */ = {
+			isa = PBXGroup;
+			children = (
+				A6E5707E1D82F4D400AC51B0 /* PrintJob.h */,
+				A6E5707F1D82F4D400AC51B0 /* PrintJob.m */,
+			);
+			name = PrintJob;
 			sourceTree = "<group>";
 		};
 		A6F144201D75B37800621872 /* Helpers */ = {
@@ -474,11 +502,13 @@
 				A664355B1D7EDF910026AE1B /* GetRegistersRequest.m in Sources */,
 				A6F144321D75CA7400621872 /* PresentationAnimator.m in Sources */,
 				A66435531D7DAFA50026AE1B /* DocumentSettings.m in Sources */,
+				A6E5707B1D82E73200AC51B0 /* PusherManager.m in Sources */,
 				A64428EC1D74A0130054CFE0 /* main.m in Sources */,
 				A6F1442E1D75B54300621872 /* AlertViewManager.m in Sources */,
 				A664355F1D7EE9610026AE1B /* Register.m in Sources */,
 				A6F144271D75B42C00621872 /* NSViewController+Alert.m in Sources */,
 				A64428E91D74A0130054CFE0 /* AppDelegate.m in Sources */,
+				A6E570801D82F4D400AC51B0 /* PrintJob.m in Sources */,
 				A66F3B0A1D773308003EC562 /* Location.m in Sources */,
 				A6C192B31D74B4A300D28CE7 /* LoginViewController.m in Sources */,
 				A66F3B131D773701003EC562 /* User.m in Sources */,

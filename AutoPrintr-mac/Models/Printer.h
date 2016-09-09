@@ -12,7 +12,7 @@
 @interface Printer : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSNumber *registerId;
+@property (strong, nonatomic) NSString *registerId;
 @property (strong, nonatomic) NSMutableArray *documentsSettings;
 
 @property (strong, nonatomic) DocumentSettings *settingsLetterInvoice;

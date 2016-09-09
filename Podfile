@@ -5,5 +5,6 @@
 
 target 'AutoPrintr-mac' do
 pod 'AFNetworking', '~> 3.1'
+pod 'libPusher', '~> 1.6.2'
 end
 

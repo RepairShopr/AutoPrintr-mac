@@ -747,6 +747,7 @@
                     </popUpButtonCell>
                     <connections>
                         <binding destination="4p7-g5-cgV" name="contentValues" keyPath="arrangedObjects.description" id="XU2-B2-Y9i"/>
+                        <binding destination="Vq3-8N-h3f" name="selectedValue" keyPath="representedObject.registerId" previousBinding="XU2-B2-Y9i" id="5KG-Il-QQ1"/>
                     </connections>
                 </popUpButton>
             </subviews>
@@ -853,7 +854,7 @@
                 <constraint firstItem="ZFv-WY-mPN" firstAttribute="top" secondItem="bWV-96-t0C" secondAttribute="top" constant="20" id="yHY-Bd-Xl1"/>
                 <constraint firstItem="vLF-Tm-HZ6" firstAttribute="top" secondItem="ZFv-WY-mPN" secondAttribute="bottom" constant="26" id="zFX-i3-Iof"/>
             </constraints>
-            <point key="canvasLocation" x="199" y="281"/>
+            <point key="canvasLocation" x="19" y="267"/>
         </customView>
         <arrayController objectClassName="Printer" id="cyj-xM-q8M">
             <declaredKeys>

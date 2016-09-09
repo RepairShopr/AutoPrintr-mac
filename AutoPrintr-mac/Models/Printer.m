@@ -16,7 +16,7 @@
 
 + (instancetype)createWithName:(NSString *)name
              documentsSettings:(NSArray *)documentsSettings
-                    registerId:(NSNumber *)registerId {
+                    registerId:(NSString *)registerId {
     Printer *printer = [self new];
     
     printer.name = name;
