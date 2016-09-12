@@ -24,12 +24,23 @@
 }
 
 - (DocumentType)documentType {
-#warning handle this!!!
-#warning handle this!!!
-#warning handle this!!!
-#warning handle this!!!
-#warning handle this!!!
-    return DocTypeLabelCustomerID;
+    NSDictionary *documentsTypes = @{
+                                     @"Invoice": @(DocTypeLetterInvoice),
+                                     @"Estimate": @(DocTypeLetterEstimate),
+                                     @"Ticket": @(DocTypeLetterTicket),
+                                     @"IntakeForm": @(DocTypeLetterIntakeForm),
+                                     @"Receipt": @(DocTypeReceiptReceipt),
+                                     @"ZReport": @(DocTypeReceiptZReport),
+                                     @"TicketReceipt": @(DocTypeReceiptTicketReceipt),
+                                     @"PopDrawer": @(DocTypeReceiptPopDrawer),
+                                     @"Adjustment": @(DocTypeReceiptAdjustment),
+                                     @"CustomerID": @(DocTypeLabelCustomerID),
+                                     @"Asset": @(DocTypeLabelAsset),
+                                     @"TicketLabel": @(DocTypeLabelTicketLabel)};
+    
+    return [documentsTypes[self.document] integerValue];
 }
+
+
 
 @end

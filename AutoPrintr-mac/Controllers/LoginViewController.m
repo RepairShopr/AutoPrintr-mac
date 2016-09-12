@@ -26,7 +26,7 @@
 
 - (void)viewWillAppear {
     [super viewWillAppear];
-    
+
     if ([DataManager shared].loggedInUser) {
         self.loginTextField.stringValue = [DataManager shared].loggedInUser.email;
     }

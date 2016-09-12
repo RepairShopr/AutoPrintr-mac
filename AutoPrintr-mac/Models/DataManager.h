@@ -21,5 +21,6 @@
 
 - (User *)loggedInUser;
 - (void)setUser:(User *)user;
+- (NSArray *)printersWithRegisterId:(NSNumber *)registerId;
 
 @end

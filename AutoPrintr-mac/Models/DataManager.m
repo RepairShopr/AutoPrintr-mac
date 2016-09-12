@@ -35,16 +35,35 @@ static NSString * const loggedInUserKey = @"loggedInUserKey";
 - (NSArray *)printers {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *savedPrintersData = [defaults objectForKey:printersKey];
+    NSArray *allPrinters = [Printer allAvailablePrinters];
+    NSMutableArray *printers;
     
     if (savedPrintersData == nil) {
         // save to defaults
-        NSArray *printersArray = [Printer allAvailablePrinters];
+        savedPrintersData = [NSKeyedArchiver archivedDataWithRootObject:allPrinters];
+        [defaults setObject:savedPrintersData forKey:printersKey];
+    } else {
+        printers = [NSKeyedUnarchiver unarchiveObjectWithData:savedPrintersData];
+        for (Printer *printer in allPrinters) {
+            BOOL found = NO;
+            for (Printer *savedPrinter in printers) {
+                if ([printer.name isEqualToString:savedPrinter.name]) {
+                    found = YES;
+                    break;
+                }
+            }
+            
+            if (!found) {
+                [printers addObject:printer];
+            }
+        }
         
-        savedPrintersData = [NSKeyedArchiver archivedDataWithRootObject:printersArray];
+        // save to defaults
+        savedPrintersData = [NSKeyedArchiver archivedDataWithRootObject:printers];
         [defaults setObject:savedPrintersData forKey:printersKey];
     }
     
-    NSArray *printers = [NSKeyedUnarchiver unarchiveObjectWithData:savedPrintersData];
+    printers = [NSKeyedUnarchiver unarchiveObjectWithData:savedPrintersData];
     return printers;
 }
 
@@ -52,6 +71,27 @@ static NSString * const loggedInUserKey = @"loggedInUserKey";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *savedPrintersData = [NSKeyedArchiver archivedDataWithRootObject:printers];
     [defaults setObject:savedPrintersData forKey:printersKey];
+}
+
+- (NSArray *)printersWithRegisterId:(NSNumber *)registerId {
+    NSMutableArray *printers = [NSMutableArray array];
+    
+    if ([registerId isKindOfClass:[NSNull class]]) {
+        printers = [NSMutableArray arrayWithArray:self.printers];
+    } else {
+        NSArray *allPrinters = self.printers;
+        for (Printer *printer in allPrinters) {
+            NSNumber *printerRegisterId;
+            if (printer.registerId && ! [printer.registerId isEqualToString:@"None"]) {
+                printerRegisterId = @([printer.registerId integerValue]);
+            }
+            if ([printerRegisterId isEqualToNumber:registerId]) {
+                [printers addObject:printer];
+            }
+        }
+    }
+    
+    return printers;
 }
 
 #pragma mark - Logged In User

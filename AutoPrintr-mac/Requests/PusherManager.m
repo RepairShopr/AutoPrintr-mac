@@ -13,6 +13,9 @@
 #import "DataManager.h"
 #import "Printer.h"
 
+static NSString * const kPusherChannel = @"test_channel";
+static NSString * const kPusherEvent = @"my_event";
+
 @interface PusherManager() <PTPusherDelegate>
 @property (strong, nonatomic) PTPusher *client;
 @end
@@ -31,12 +34,14 @@
     return sharedInstance;
 }
 
+#pragma mark - Channel Listening
+
 - (void)startListening {
     self.client = [PTPusher pusherWithKey:Pusher_KEY delegate:self encrypted:YES];
     
-    PTPusherChannel *channel = [self.client subscribeToChannelNamed:@"test_channel"];
+    PTPusherChannel *channel = [self.client subscribeToChannelNamed:kPusherChannel];
     
-    [channel bindToEventNamed:@"my_event" handleWithBlock:^(PTPusherEvent *channelEvent) {
+    [channel bindToEventNamed:kPusherEvent handleWithBlock:^(PTPusherEvent *channelEvent) {
         PrintJob *printJob = [PrintJob createFromDictionary:channelEvent.data];
         [self handlePrintJob:printJob];
     }];
@@ -44,13 +49,15 @@
     [self.client connect];
 }
 
+#pragma mark - Print Jobs Handling
+
 - (void)handlePrintJob:(PrintJob *)printJob {
     // check job location
     if (! [printJob.locationId isEqualToNumber:[DataManager shared].selectedLocation.locationId]) {
         return;
     }
     
-    NSArray *printers = [self printersWithRegisterId:printJob.registerId];
+    NSArray *printers = [[DataManager shared] printersWithRegisterId:printJob.registerId];
     for (Printer *printer in printers) {
         DocumentSettings *printerDocumentSettings;
         for (DocumentSettings *settings in printer.documentsSettings) {
@@ -70,26 +77,7 @@
     }
 }
 
-- (NSArray *)printersWithRegisterId:(NSNumber *)registerId {
-    NSMutableArray *printers = [NSMutableArray array];
-    
-    if ([registerId isKindOfClass:[NSNull class]]) {
-        printers = [NSMutableArray arrayWithArray:[DataManager shared].printers];
-    } else {
-        NSArray *allPrinters = [DataManager shared].printers;
-        for (Printer *printer in allPrinters) {
-            NSNumber *printerRegisterId;
-            if (printer.registerId && ! [printer.registerId isEqualToString:@"None"]) {
-                printerRegisterId = @([printer.registerId integerValue]);
-            }
-            if ([printerRegisterId isEqualToNumber:registerId]) {
-                [printers addObject:printer];
-            }
-        }
-    }
-    
-    return printers;
-}
+#pragma mark - Print the file
 
 - (void)executePrintJob:(PrintJob *)printJob
               toPrinter:(Printer *)printer
@@ -101,7 +89,8 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory, @"filename.pdf"];
+    NSString *fileName = [NSString stringWithFormat:@"JOB_%zd.pdf", [NSDate timeIntervalSinceReferenceDate]];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory, fileName];
     [urlData writeToFile:filePath atomically:YES];
     
     NSTask *task = [NSTask new];
@@ -121,6 +110,5 @@
     NSString *commandOutput = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"%@", commandOutput);
 }
-
 
 @end

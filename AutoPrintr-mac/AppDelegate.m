@@ -8,20 +8,26 @@
 
 #import "AppDelegate.h"
 #import "SelectLocationViewController.h"
+#import "SettingsViewController.h"
 #import "LoginViewController.h"
-#import "DataManager.h"
 #import "PusherManager.h"
+#import "DataManager.h"
 
 @interface AppDelegate () <LoginDelegate>
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSMenu *mainMenu;
 @property (weak) IBOutlet NSMenuItem *loginMenuItem;
 
+
 @property (strong, nonatomic) LoginViewController *loginViewController;
 @property (strong, nonatomic) NSStatusItem *statusItem;
 
 @property (strong, nonatomic) SelectLocationViewController *selectLocationViewController;
 @property (strong, nonatomic) NSWindow *locationsWindow;
+
+@property (strong, nonatomic) SettingsViewController *settingsViewController;
+@property (strong, nonatomic) NSWindow *settingsWindow;
+@property (strong, nonatomic) NSMenuItem *settingsItem;
 
 @end
 
@@ -51,12 +57,10 @@
     [self.window makeKeyAndOrderFront:nil];
 }
 
-- (IBAction)didClickLocationButton:(id)sender {
+- (void)didClickLocationButton:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];
 
-#warning remove this hard-coded frame
-    NSRect frame = NSMakeRect(100, 100, 460, 380);
-    self.locationsWindow = [[NSWindow alloc] initWithContentRect:frame
+    self.locationsWindow = [[NSWindow alloc] initWithContentRect:self.window.frame
                                                        styleMask:NSTitledWindowMask | NSClosableWindowMask
                                                          backing:NSBackingStoreBuffered
                                                            defer:NO];
@@ -69,6 +73,22 @@
     [self.locationsWindow makeKeyAndOrderFront:self];
 }
 
+- (void)didClickSettingsButton {
+    [NSApp activateIgnoringOtherApps:YES];
+    
+    self.settingsWindow = [[NSWindow alloc] initWithContentRect:self.window.frame
+                                                       styleMask:NSTitledWindowMask | NSClosableWindowMask
+                                                         backing:NSBackingStoreBuffered
+                                                           defer:NO];
+    self.settingsWindow.releasedWhenClosed = NO;
+    
+    self.settingsViewController = [SettingsViewController new];
+    [self.settingsWindow.contentView addSubview:self.settingsViewController.view];
+    [[self.settingsViewController view] setFrame:[self.settingsWindow.contentView bounds]];
+    
+    [self.settingsWindow makeKeyAndOrderFront:self];
+}
+
 - (IBAction)didClickQuitButton:(id)sender {
     [NSApp terminate:nil];
 }
@@ -76,12 +96,30 @@
 #pragma mark - Login Delegate
 
 - (void)loginDidSucceed {
+    [self addLocationOption];
+    [self addSettingsOption];
+}
+
+#pragma mark - Menu Options
+
+- (void)addLocationOption {
     [self.mainMenu removeItem:self.loginMenuItem];
     
     NSMenuItem *locationsItem = [[NSMenuItem alloc] initWithTitle:@"Locations"
                                                            action:@selector(didClickLocationButton:)
                                                     keyEquivalent:@""];
     [self.mainMenu insertItem:locationsItem atIndex:0];
+}
+
+- (void)addSettingsOption {
+    if (self.settingsItem && [self.mainMenu.itemArray containsObject:self.settingsItem]) {
+        return;
+    }
+    
+    self.settingsItem = [[NSMenuItem alloc] initWithTitle:@"Settings"
+                                                   action:@selector(didClickSettingsButton)
+                                            keyEquivalent:@""];
+    [self.mainMenu insertItem:self.settingsItem atIndex:1];
 }
 
 #pragma mark - App Delegate
