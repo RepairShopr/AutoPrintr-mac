@@ -16,14 +16,16 @@
 @interface AppDelegate () <LoginDelegate>
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSMenu *mainMenu;
-@property (weak) IBOutlet NSMenuItem *loginMenuItem;
-
 
 @property (strong, nonatomic) LoginViewController *loginViewController;
 @property (strong, nonatomic) NSStatusItem *statusItem;
+@property (strong, nonatomic) LoginManager *loginManager;
+@property (strong) IBOutlet NSMenuItem *loginMenuItem;
+@property (strong, nonatomic) NSMenuItem *logoutItem;
 
 @property (strong, nonatomic) SelectLocationViewController *selectLocationViewController;
 @property (strong, nonatomic) NSWindow *locationsWindow;
+@property (strong, nonatomic) NSMenuItem *locationsItem;
 
 @property (strong, nonatomic) SettingsViewController *settingsViewController;
 @property (strong, nonatomic) NSWindow *settingsWindow;
@@ -39,9 +41,6 @@
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     self.statusItem.menu = self.mainMenu;
     self.statusItem.image = [NSImage imageNamed:@"menuItemIcon"];
-    self.statusItem.title = @"AutoPrintr";
-#warning need to investigate this
-    self.statusItem.title = @"AutoPrintr";
     self.statusItem.highlightMode = YES;
 }
 
@@ -50,7 +49,8 @@
 - (IBAction)didClickLoginButton:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];
 
-    self.loginViewController = [LoginViewController createWithDelegate:self];
+    self.loginViewController = [LoginViewController createLoginManager:self.loginManager
+                                                              delegate:self];
     [self.window.contentView addSubview:self.loginViewController.view];
     [[self.loginViewController view] setFrame:[[self.window contentView] bounds]];
 
@@ -89,6 +89,14 @@
     [self.settingsWindow makeKeyAndOrderFront:self];
 }
 
+- (void)didClickLogoutButton {
+    [self.mainMenu removeItem:self.locationsItem];
+    [self.mainMenu removeItem:self.settingsItem];
+    [self.mainMenu removeItem:self.logoutItem];
+    [self.mainMenu insertItem:self.loginMenuItem atIndex:0];
+    [self.loginManager logoutUser];
+}
+
 - (IBAction)didClickQuitButton:(id)sender {
     [NSApp terminate:nil];
 }
@@ -98,6 +106,7 @@
 - (void)loginDidSucceed {
     [self addLocationOption];
     [self addSettingsOption];
+    [self addLogoutOption];
 }
 
 #pragma mark - Menu Options
@@ -105,10 +114,10 @@
 - (void)addLocationOption {
     [self.mainMenu removeItem:self.loginMenuItem];
     
-    NSMenuItem *locationsItem = [[NSMenuItem alloc] initWithTitle:@"Locations"
+    self.locationsItem = [[NSMenuItem alloc] initWithTitle:@"Locations"
                                                            action:@selector(didClickLocationButton:)
                                                     keyEquivalent:@""];
-    [self.mainMenu insertItem:locationsItem atIndex:0];
+    [self.mainMenu insertItem:self.locationsItem atIndex:0];
 }
 
 - (void)addSettingsOption {
@@ -122,17 +131,24 @@
     [self.mainMenu insertItem:self.settingsItem atIndex:1];
 }
 
+- (void)addLogoutOption {
+    self.logoutItem = [[NSMenuItem alloc] initWithTitle:@"Log out"
+                                                 action:@selector(didClickLogoutButton)
+                                          keyEquivalent:@""];
+    [self.mainMenu insertItem:self.logoutItem atIndex:2];
+}
+
 #pragma mark - App Delegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-//    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-//    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
-    
-    [[PusherManager shared] startListening];
-}
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
+    self.loginManager = [LoginManager new];
+    if ([self.loginManager shouldAutoLogin]) {
+        [self.loginManager performAutoLoginWithCompletionBlock:^(BOOL succeed, NSString *errorMessage) {
+            if (succeed) {
+                [self loginDidSucceed];
+            }
+        }];
+    }
 }
 
 @end

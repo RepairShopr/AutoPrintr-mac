@@ -11,6 +11,7 @@
 
 static NSString * const printersKey = @"printersKey";
 static NSString * const loggedInUserKey = @"loggedInUserKey";
+static NSString * const selectedLocationKey = @"selectedLocationKey";
 
 @interface DataManager()
 @property (strong, nonatomic) User *loggedInUser;
@@ -117,6 +118,25 @@ static NSString * const loggedInUserKey = @"loggedInUserKey";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *savedUserData = [NSKeyedArchiver archivedDataWithRootObject:user];
     [defaults setObject:savedUserData forKey:loggedInUserKey];
+}
+
+#pragma mark - Selected location
+
+- (Location *)selectedLocation {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *savedSelectedLocationData = [defaults objectForKey:selectedLocationKey];
+    
+    if (savedSelectedLocationData == nil) {
+        return nil;
+    }
+    
+    return [NSKeyedUnarchiver unarchiveObjectWithData:savedSelectedLocationData];
+}
+
+- (void)setSelectedLocation:(Location *)selectedLocation {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *savedSelectedLocationData = [NSKeyedArchiver archivedDataWithRootObject:selectedLocation];
+    [defaults setObject:savedSelectedLocationData forKey:selectedLocationKey];
 }
 
 @end

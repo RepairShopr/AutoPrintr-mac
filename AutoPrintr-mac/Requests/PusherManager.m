@@ -13,8 +13,7 @@
 #import "DataManager.h"
 #import "Printer.h"
 
-static NSString * const kPusherChannel = @"test_channel";
-static NSString * const kPusherEvent = @"my_event";
+static NSString * const kPusherEvent = @"print-job";
 
 @interface PusherManager() <PTPusherDelegate>
 @property (strong, nonatomic) PTPusher *client;
@@ -39,7 +38,7 @@ static NSString * const kPusherEvent = @"my_event";
 - (void)startListening {
     self.client = [PTPusher pusherWithKey:Pusher_KEY delegate:self encrypted:YES];
     
-    PTPusherChannel *channel = [self.client subscribeToChannelNamed:kPusherChannel];
+    PTPusherChannel *channel = [self.client subscribeToChannelNamed:[DataManager shared].messagingChannel];
     
     [channel bindToEventNamed:kPusherEvent handleWithBlock:^(PTPusherEvent *channelEvent) {
         PrintJob *printJob = [PrintJob createFromDictionary:channelEvent.data];
@@ -89,7 +88,8 @@ static NSString * const kPusherEvent = @"my_event";
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
-    NSString *fileName = [NSString stringWithFormat:@"JOB_%zd.pdf", [NSDate timeIntervalSinceReferenceDate]];
+    NSInteger timestamp = [NSDate timeIntervalSinceReferenceDate];
+    NSString *fileName = [NSString stringWithFormat:@"JOB_%zd.pdf", timestamp];
     NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory, fileName];
     [urlData writeToFile:filePath atomically:YES];
     

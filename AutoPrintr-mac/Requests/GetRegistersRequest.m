@@ -7,6 +7,7 @@
 //
 
 #import "GetRegistersRequest.h"
+#import "PusherManager.h"
 #import "DataManager.h"
 #import "Register.h"
 
@@ -30,6 +31,7 @@
 
 - (id)successData:(id)data {
     [DataManager shared].messagingChannel = data[@"messaging_channel"];
+    [[PusherManager shared] startListening];
     
     NSMutableArray *registers = [NSMutableArray array];
     for (NSDictionary *registerDict in data[@"registers"]) {

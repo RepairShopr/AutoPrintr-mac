@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "LoginManager.h"
 
 @protocol LoginDelegate <NSObject>
 - (void)loginDidSucceed;
@@ -14,6 +15,6 @@
 
 @interface LoginViewController : NSViewController
 
-+ (instancetype)createWithDelegate:(id<LoginDelegate>)delegate;
++ (instancetype)createLoginManager:(LoginManager *)loginManager delegate:(id<LoginDelegate>)delegate;
 
 @end

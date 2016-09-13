@@ -20,6 +20,7 @@
 		A66F3B131D773701003EC562 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B121D773701003EC562 /* User.m */; };
 		A68809F31D78640A00520336 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68809F11D78640A00520336 /* SettingsViewController.m */; };
 		A68809F41D78640A00520336 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68809F21D78640A00520336 /* SettingsViewController.xib */; };
+		A6A486241D8836A300B98125 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A486231D8836A300B98125 /* LoginManager.m */; };
 		A6C192B31D74B4A300D28CE7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C192B11D74B4A300D28CE7 /* LoginViewController.m */; };
 		A6C192B41D74B4A300D28CE7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */; };
 		A6E5707B1D82E73200AC51B0 /* PusherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E5707A1D82E73200AC51B0 /* PusherManager.m */; };
@@ -59,6 +60,8 @@
 		A68809F01D78640A00520336 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Controllers/SettingsViewController.h; sourceTree = "<group>"; };
 		A68809F11D78640A00520336 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controllers/SettingsViewController.m; sourceTree = "<group>"; };
 		A68809F21D78640A00520336 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = Controllers/SettingsViewController.xib; sourceTree = "<group>"; };
+		A6A486221D8836A300B98125 /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginManager.h; path = Models/LoginManager.h; sourceTree = "<group>"; };
+		A6A486231D8836A300B98125 /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginManager.m; path = Models/LoginManager.m; sourceTree = "<group>"; };
 		A6C192B01D74B4A300D28CE7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
 		A6C192B11D74B4A300D28CE7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
 		A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Controllers/LoginViewController.xib; sourceTree = "<group>"; };
@@ -211,6 +214,7 @@
 		A66F3B0B1D7735F1003EC562 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A6A486211D8835C100B98125 /* LoginManager */,
 				A6E570781D82E70C00AC51B0 /* PusherManager */,
 				A66F3B0C1D7735F9003EC562 /* DataManager */,
 				A6E5707C1D82E98900AC51B0 /* AppKeys.h */,
@@ -244,6 +248,15 @@
 				A68809F21D78640A00520336 /* SettingsViewController.xib */,
 			);
 			name = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		A6A486211D8835C100B98125 /* LoginManager */ = {
+			isa = PBXGroup;
+			children = (
+				A6A486221D8836A300B98125 /* LoginManager.h */,
+				A6A486231D8836A300B98125 /* LoginManager.m */,
+			);
+			name = LoginManager;
 			sourceTree = "<group>";
 		};
 		A6C192AA1D74AA7600D28CE7 /* Resources */ = {
@@ -499,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6F144381D75D5E900621872 /* SelectLocationViewController.m in Sources */,
+				A6A486241D8836A300B98125 /* LoginManager.m in Sources */,
 				A664355B1D7EDF910026AE1B /* GetRegistersRequest.m in Sources */,
 				A6F144321D75CA7400621872 /* PresentationAnimator.m in Sources */,
 				A66435531D7DAFA50026AE1B /* DocumentSettings.m in Sources */,

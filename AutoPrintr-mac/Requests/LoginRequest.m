@@ -41,6 +41,7 @@
 
 - (id)successData:(id)data {
     User *user = [User createFromDictionary:data];
+    user.password = self.password;
     [[DataManager shared] setUser:user];
     return user;
 }

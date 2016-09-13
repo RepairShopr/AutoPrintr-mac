@@ -41,12 +41,14 @@
     self = [super init];
     if (self) {
         self.email = [coder decodeObjectForKey:@"email"];
+        self.password = [coder decodeObjectForKey:@"password"];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
     [coder encodeObject:self.email forKey:@"email"];
+    [coder encodeObject:self.password forKey:@"password"];
 }
 
 @end

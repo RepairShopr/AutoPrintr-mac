@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSNumber *twoFactorRequired;
 
 @property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic) NSString *password;
 @property (strong, nonatomic) NSNumber *userId;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *token;
