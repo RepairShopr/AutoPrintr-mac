@@ -52,7 +52,7 @@ static NSString * const kPusherEvent = @"print-job";
 
 - (void)handlePrintJob:(PrintJob *)printJob {
     // check job location
-    if (! [printJob.locationId isEqualToNumber:[DataManager shared].selectedLocation.locationId]) {
+    if (![printJob.locationId isKindOfClass:[NSNull class]] && ![printJob.locationId isEqualToNumber:[DataManager shared].selectedLocation.locationId]) {
         return;
     }
     

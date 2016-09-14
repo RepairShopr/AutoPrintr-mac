@@ -12,6 +12,7 @@
 #import "LoginViewController.h"
 #import "PusherManager.h"
 #import "DataManager.h"
+#import <ServiceManagement/ServiceManagement.h>
 
 @interface AppDelegate () <LoginDelegate>
 @property (weak) IBOutlet NSWindow *window;
@@ -41,6 +42,7 @@
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     self.statusItem.menu = self.mainMenu;
     self.statusItem.image = [NSImage imageNamed:@"menuItemIcon"];
+    self.statusItem.alternateImage = [NSImage imageNamed:@"menuItemIconHighlighted"];
     self.statusItem.highlightMode = YES;
 }
 
@@ -104,6 +106,9 @@
 #pragma mark - Login Delegate
 
 - (void)loginDidSucceed {
+    if (self.loginMenuItem && [self.mainMenu.itemArray containsObject:self.loginMenuItem]) {
+        [self.mainMenu removeItem:self.loginMenuItem];
+    }
     [self addLocationOption];
     [self addSettingsOption];
     [self addLogoutOption];
@@ -112,7 +117,9 @@
 #pragma mark - Menu Options
 
 - (void)addLocationOption {
-    [self.mainMenu removeItem:self.loginMenuItem];
+    if (self.locationsItem && [self.mainMenu.itemArray containsObject:self.locationsItem]) {
+        return;
+    }
     
     self.locationsItem = [[NSMenuItem alloc] initWithTitle:@"Locations"
                                                            action:@selector(didClickLocationButton:)
@@ -132,6 +139,9 @@
 }
 
 - (void)addLogoutOption {
+    if (self.logoutItem && [self.mainMenu.itemArray containsObject:self.logoutItem]) {
+        return;
+    }
     self.logoutItem = [[NSMenuItem alloc] initWithTitle:@"Log out"
                                                  action:@selector(didClickLogoutButton)
                                           keyEquivalent:@""];
@@ -141,6 +151,12 @@
 #pragma mark - App Delegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    if (!SMLoginItemSetEnabled((__bridge CFStringRef)@"com.x2mobile.AutoPrintrHelper", YES)) {
+        NSLog(@"Login Item Was Not Successful");
+    } else {
+        NSLog(@"Login Item Was Successful");
+    }
+    
     self.loginManager = [LoginManager new];
     if ([self.loginManager shouldAutoLogin]) {
         [self.loginManager performAutoLoginWithCompletionBlock:^(BOOL succeed, NSString *errorMessage) {

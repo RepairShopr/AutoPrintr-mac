@@ -20,7 +20,13 @@
 		A66F3B131D773701003EC562 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F3B121D773701003EC562 /* User.m */; };
 		A68809F31D78640A00520336 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68809F11D78640A00520336 /* SettingsViewController.m */; };
 		A68809F41D78640A00520336 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68809F21D78640A00520336 /* SettingsViewController.xib */; };
+		A6A1CBAE1D89A67B00C42E11 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A1CBAD1D89A67B00C42E11 /* ServiceManagement.framework */; };
 		A6A486241D8836A300B98125 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A486231D8836A300B98125 /* LoginManager.m */; };
+		A6A4862F1D89A0E100B98125 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A4862E1D89A0E100B98125 /* AppDelegate.m */; };
+		A6A486321D89A0E100B98125 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A486311D89A0E100B98125 /* main.m */; };
+		A6A486341D89A0E100B98125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6A486331D89A0E100B98125 /* Assets.xcassets */; };
+		A6A486371D89A0E100B98125 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A486351D89A0E100B98125 /* MainMenu.xib */; };
+		A6A4863D1D89A18000B98125 /* AutoPrintrHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6A4862B1D89A0E100B98125 /* AutoPrintrHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A6C192B31D74B4A300D28CE7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C192B11D74B4A300D28CE7 /* LoginViewController.m */; };
 		A6C192B41D74B4A300D28CE7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */; };
 		A6E5707B1D82E73200AC51B0 /* PusherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E5707A1D82E73200AC51B0 /* PusherManager.m */; };
@@ -34,6 +40,19 @@
 		A6F144391D75D5E900621872 /* SelectLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6F144371D75D5E900621872 /* SelectLocationViewController.xib */; };
 		CA7858FB383C441844D6378D /* libPods-AutoPrintr-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1A81E275A51889BDE5875E /* libPods-AutoPrintr-mac.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A6A4863C1D89A15400B98125 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				A6A4863D1D89A18000B98125 /* AutoPrintrHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A64428E41D74A0130054CFE0 /* AutoPrintr-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AutoPrintr-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,8 +79,16 @@
 		A68809F01D78640A00520336 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Controllers/SettingsViewController.h; sourceTree = "<group>"; };
 		A68809F11D78640A00520336 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controllers/SettingsViewController.m; sourceTree = "<group>"; };
 		A68809F21D78640A00520336 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = Controllers/SettingsViewController.xib; sourceTree = "<group>"; };
+		A6A1CBAD1D89A67B00C42E11 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		A6A486221D8836A300B98125 /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginManager.h; path = Models/LoginManager.h; sourceTree = "<group>"; };
 		A6A486231D8836A300B98125 /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginManager.m; path = Models/LoginManager.m; sourceTree = "<group>"; };
+		A6A4862B1D89A0E100B98125 /* AutoPrintrHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPrintrHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6A4862D1D89A0E100B98125 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A6A4862E1D89A0E100B98125 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A6A486311D89A0E100B98125 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A6A486331D89A0E100B98125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6A486361D89A0E100B98125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A6A486381D89A0E100B98125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6C192B01D74B4A300D28CE7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
 		A6C192B11D74B4A300D28CE7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
 		A6C192B21D74B4A300D28CE7 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Controllers/LoginViewController.xib; sourceTree = "<group>"; };
@@ -93,7 +120,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A1CBAE1D89A67B00C42E11 /* ServiceManagement.framework in Frameworks */,
 				CA7858FB383C441844D6378D /* libPods-AutoPrintr-mac.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6A486281D89A0E100B98125 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +138,7 @@
 		5941AEA651B9821C15FAE45E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6A1CBAD1D89A67B00C42E11 /* ServiceManagement.framework */,
 				DD1A81E275A51889BDE5875E /* libPods-AutoPrintr-mac.a */,
 			);
 			name = Frameworks;
@@ -112,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				A64428E61D74A0130054CFE0 /* AutoPrintr-mac */,
+				A6A4862C1D89A0E100B98125 /* AutoPrintrHelper */,
 				A64428E51D74A0130054CFE0 /* Products */,
 				B2732D3C97FAA74CE538D866 /* Pods */,
 				5941AEA651B9821C15FAE45E /* Frameworks */,
@@ -122,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				A64428E41D74A0130054CFE0 /* AutoPrintr-mac.app */,
+				A6A4862B1D89A0E100B98125 /* AutoPrintrHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,6 +295,27 @@
 				A6A486231D8836A300B98125 /* LoginManager.m */,
 			);
 			name = LoginManager;
+			sourceTree = "<group>";
+		};
+		A6A4862C1D89A0E100B98125 /* AutoPrintrHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A6A4862D1D89A0E100B98125 /* AppDelegate.h */,
+				A6A4862E1D89A0E100B98125 /* AppDelegate.m */,
+				A6A486331D89A0E100B98125 /* Assets.xcassets */,
+				A6A486351D89A0E100B98125 /* MainMenu.xib */,
+				A6A486381D89A0E100B98125 /* Info.plist */,
+				A6A486301D89A0E100B98125 /* Supporting Files */,
+			);
+			path = AutoPrintrHelper;
+			sourceTree = "<group>";
+		};
+		A6A486301D89A0E100B98125 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6A486311D89A0E100B98125 /* main.m */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		A6C192AA1D74AA7600D28CE7 /* Resources */ = {
@@ -401,6 +460,7 @@
 				A64428E21D74A0130054CFE0 /* Resources */,
 				0EA86FD8BC88791BECED7A9F /* Embed Pods Frameworks */,
 				52B7EF6055847987F8359CFC /* Copy Pods Resources */,
+				A6A4863C1D89A15400B98125 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -409,6 +469,23 @@
 			name = "AutoPrintr-mac";
 			productName = "AutoPrintr-mac";
 			productReference = A64428E41D74A0130054CFE0 /* AutoPrintr-mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A6A4862A1D89A0E100B98125 /* AutoPrintrHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6A486391D89A0E100B98125 /* Build configuration list for PBXNativeTarget "AutoPrintrHelper" */;
+			buildPhases = (
+				A6A486271D89A0E100B98125 /* Sources */,
+				A6A486281D89A0E100B98125 /* Frameworks */,
+				A6A486291D89A0E100B98125 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoPrintrHelper;
+			productName = AutoPrintrHelper;
+			productReference = A6A4862B1D89A0E100B98125 /* AutoPrintrHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -421,6 +498,9 @@
 				ORGANIZATIONNAME = "Catalin Haidau";
 				TargetAttributes = {
 					A64428E31D74A0130054CFE0 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					A6A4862A1D89A0E100B98125 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -439,6 +519,7 @@
 			projectRoot = "";
 			targets = (
 				A64428E31D74A0130054CFE0 /* AutoPrintr-mac */,
+				A6A4862A1D89A0E100B98125 /* AutoPrintrHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -453,6 +534,15 @@
 				A6F144391D75D5E900621872 /* SelectLocationViewController.xib in Resources */,
 				A6C192B41D74B4A300D28CE7 /* LoginViewController.xib in Resources */,
 				A68809F41D78640A00520336 /* SettingsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6A486291D89A0E100B98125 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6A486341D89A0E100B98125 /* Assets.xcassets in Resources */,
+				A6A486371D89A0E100B98125 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +624,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A6A486271D89A0E100B98125 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6A486321D89A0E100B98125 /* main.m in Sources */,
+				A6A4862F1D89A0E100B98125 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -541,6 +640,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				A64428F01D74A0140054CFE0 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		A6A486351D89A0E100B98125 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6A486361D89A0E100B98125 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -655,6 +762,32 @@
 			};
 			name = Release;
 		};
+		A6A4863A1D89A0E100B98125 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AutoPrintrHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.x2mobile.AutoPrintrHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A6A4863B1D89A0E100B98125 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AutoPrintrHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.x2mobile.AutoPrintrHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -672,6 +805,15 @@
 			buildConfigurations = (
 				A64428F61D74A0140054CFE0 /* Debug */,
 				A64428F71D74A0140054CFE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6A486391D89A0E100B98125 /* Build configuration list for PBXNativeTarget "AutoPrintrHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6A4863A1D89A0E100B98125 /* Debug */,
+				A6A4863B1D89A0E100B98125 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
