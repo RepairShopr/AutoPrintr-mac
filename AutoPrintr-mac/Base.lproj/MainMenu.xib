@@ -689,6 +689,12 @@
                         <action selector="didClickLoginButton:" target="Voe-Tx-rLC" id="NPq-hk-bNA"/>
                     </connections>
                 </menuItem>
+                <menuItem title="View logs" id="TjD-m6-er6">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="didClickViewLogsButton:" target="Voe-Tx-rLC" id="caS-iQ-dNq"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Quit" id="StP-FR-0bF">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

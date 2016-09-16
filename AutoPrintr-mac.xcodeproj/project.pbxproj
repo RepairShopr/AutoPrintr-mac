@@ -21,6 +21,8 @@
 		A68809F31D78640A00520336 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68809F11D78640A00520336 /* SettingsViewController.m */; };
 		A68809F41D78640A00520336 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68809F21D78640A00520336 /* SettingsViewController.xib */; };
 		A6A1CBAE1D89A67B00C42E11 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A1CBAD1D89A67B00C42E11 /* ServiceManagement.framework */; };
+		A6A1CBB21D8AE22C00C42E11 /* LogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A1CBB11D8AE22C00C42E11 /* LogManager.m */; };
+		A6A1CBB51D8AEA1900C42E11 /* NSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A1CBB41D8AEA1900C42E11 /* NSFileManager+DirectoryLocations.m */; };
 		A6A486241D8836A300B98125 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A486231D8836A300B98125 /* LoginManager.m */; };
 		A6A4862F1D89A0E100B98125 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A4862E1D89A0E100B98125 /* AppDelegate.m */; };
 		A6A486321D89A0E100B98125 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A486311D89A0E100B98125 /* main.m */; };
@@ -80,6 +82,10 @@
 		A68809F11D78640A00520336 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controllers/SettingsViewController.m; sourceTree = "<group>"; };
 		A68809F21D78640A00520336 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = Controllers/SettingsViewController.xib; sourceTree = "<group>"; };
 		A6A1CBAD1D89A67B00C42E11 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		A6A1CBB01D8AE22C00C42E11 /* LogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogManager.h; path = Models/LogManager.h; sourceTree = "<group>"; };
+		A6A1CBB11D8AE22C00C42E11 /* LogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogManager.m; path = Models/LogManager.m; sourceTree = "<group>"; };
+		A6A1CBB31D8AEA1900C42E11 /* NSFileManager+DirectoryLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+DirectoryLocations.h"; sourceTree = "<group>"; };
+		A6A1CBB41D8AEA1900C42E11 /* NSFileManager+DirectoryLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+DirectoryLocations.m"; sourceTree = "<group>"; };
 		A6A486221D8836A300B98125 /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginManager.h; path = Models/LoginManager.h; sourceTree = "<group>"; };
 		A6A486231D8836A300B98125 /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginManager.m; path = Models/LoginManager.m; sourceTree = "<group>"; };
 		A6A4862B1D89A0E100B98125 /* AutoPrintrHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPrintrHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +258,7 @@
 		A66F3B0B1D7735F1003EC562 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A6A1CBAF1D8AE21900C42E11 /* LogManager */,
 				A6A486211D8835C100B98125 /* LoginManager */,
 				A6E570781D82E70C00AC51B0 /* PusherManager */,
 				A66F3B0C1D7735F9003EC562 /* DataManager */,
@@ -286,6 +293,24 @@
 				A68809F21D78640A00520336 /* SettingsViewController.xib */,
 			);
 			name = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		A6A1CBAF1D8AE21900C42E11 /* LogManager */ = {
+			isa = PBXGroup;
+			children = (
+				A6A1CBB01D8AE22C00C42E11 /* LogManager.h */,
+				A6A1CBB11D8AE22C00C42E11 /* LogManager.m */,
+			);
+			name = LogManager;
+			sourceTree = "<group>";
+		};
+		A6A1CBB61D8AEA2100C42E11 /* NSFileManager+DirectoryLocations */ = {
+			isa = PBXGroup;
+			children = (
+				A6A1CBB31D8AEA1900C42E11 /* NSFileManager+DirectoryLocations.h */,
+				A6A1CBB41D8AEA1900C42E11 /* NSFileManager+DirectoryLocations.m */,
+			);
+			name = "NSFileManager+DirectoryLocations";
 			sourceTree = "<group>";
 		};
 		A6A486211D8835C100B98125 /* LoginManager */ = {
@@ -384,6 +409,7 @@
 		A6F144201D75B37800621872 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A6A1CBB61D8AEA2100C42E11 /* NSFileManager+DirectoryLocations */,
 				A6F1442F1D75CA4300621872 /* PresentationAnimator */,
 				A6F1442B1D75B53000621872 /* AlertViewManager */,
 				A6F144241D75B40100621872 /* NSViewController+Alert */,
@@ -601,6 +627,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A1CBB21D8AE22C00C42E11 /* LogManager.m in Sources */,
 				A6F144381D75D5E900621872 /* SelectLocationViewController.m in Sources */,
 				A6A486241D8836A300B98125 /* LoginManager.m in Sources */,
 				A664355B1D7EDF910026AE1B /* GetRegistersRequest.m in Sources */,
@@ -613,6 +640,7 @@
 				A6F144271D75B42C00621872 /* NSViewController+Alert.m in Sources */,
 				A64428E91D74A0130054CFE0 /* AppDelegate.m in Sources */,
 				A6E570801D82F4D400AC51B0 /* PrintJob.m in Sources */,
+				A6A1CBB51D8AEA1900C42E11 /* NSFileManager+DirectoryLocations.m in Sources */,
 				A66F3B0A1D773308003EC562 /* Location.m in Sources */,
 				A6C192B31D74B4A300D28CE7 /* LoginViewController.m in Sources */,
 				A66F3B131D773701003EC562 /* User.m in Sources */,

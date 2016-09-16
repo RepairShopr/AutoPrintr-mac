@@ -1,9 +1,7 @@
 //
-//  PusherManager.m
 //  AutoPrintr-mac
 //
-//  Created by Cata Haidau on 09/09/16.
-//  Copyright © 2016 Catalin Haidau. All rights reserved.
+//  Copyright © 2016 MIT/RepairShopr. All rights reserved.
 //
 
 #import "PusherManager.h"
@@ -11,12 +9,14 @@
 #import "AppKeys.h"
 #import "PrintJob.h"
 #import "DataManager.h"
+#import "LogManager.h"
 #import "Printer.h"
 
 static NSString * const kPusherEvent = @"print-job";
 
 @interface PusherManager() <PTPusherDelegate>
 @property (strong, nonatomic) PTPusher *client;
+@property (strong, nonatomic) LogManager *logManager;
 @end
 
 @implementation PusherManager
@@ -28,6 +28,7 @@ static NSString * const kPusherEvent = @"print-job";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [PusherManager new];
+        sharedInstance.logManager = [LogManager new];
     });
     
     return sharedInstance;
@@ -42,6 +43,8 @@ static NSString * const kPusherEvent = @"print-job";
     
     [channel bindToEventNamed:kPusherEvent handleWithBlock:^(PTPusherEvent *channelEvent) {
         PrintJob *printJob = [PrintJob createFromDictionary:channelEvent.data];
+        [self.logManager logMessage:[NSString stringWithFormat:@"Event received: %@", printJob.description]];
+        
         [self handlePrintJob:printJob];
     }];
     
@@ -53,10 +56,15 @@ static NSString * const kPusherEvent = @"print-job";
 - (void)handlePrintJob:(PrintJob *)printJob {
     // check job location
     if (![printJob.locationId isKindOfClass:[NSNull class]] && ![printJob.locationId isEqualToNumber:[DataManager shared].selectedLocation.locationId]) {
+        NSString *message = [NSString stringWithFormat:@"Print skipped - printJob location %@ - your location: %@",
+                             printJob.locationId,
+                             [DataManager shared].selectedLocation.locationId];
+        [self.logManager logMessage:message];
         return;
     }
     
     NSArray *printers = [[DataManager shared] printersWithRegisterId:printJob.registerId];
+    BOOL foundPrinter = NO;
     for (Printer *printer in printers) {
         DocumentSettings *printerDocumentSettings;
         for (DocumentSettings *settings in printer.documentsSettings) {
@@ -71,8 +79,17 @@ static NSString * const kPusherEvent = @"print-job";
         }
         
         if (printerDocumentSettings.autoPrintFromTriggers || printJob.autoprinted == NO) {
+            NSString *message = [NSString stringWithFormat:@"Sending \"%@\" print to printer %@", printJob.document, printer.name];
+            [self.logManager logMessage:message];
+            
+            foundPrinter = YES;
             [self executePrintJob:printJob toPrinter:printer quantity:printerDocumentSettings.quantity];
         }
+    }
+    
+    if (! foundPrinter) {
+        NSString *message = [NSString stringWithFormat:@"Print skipped - you have no printers for job type %@", printJob.document];
+        [self.logManager logMessage:message];
     }
 }
 
@@ -81,7 +98,6 @@ static NSString * const kPusherEvent = @"print-job";
 - (void)executePrintJob:(PrintJob *)printJob
               toPrinter:(Printer *)printer
                quantity:(NSInteger)quantity {
-    
     NSURL *url = [NSURL URLWithString:printJob.fileURL];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
 
@@ -94,21 +110,35 @@ static NSString * const kPusherEvent = @"print-job";
     [urlData writeToFile:filePath atomically:YES];
     
     NSTask *task = [NSTask new];
-    NSPipe *pipe = [NSPipe new];
-    NSFileHandle *file = pipe.fileHandleForReading;
+    NSPipe *outputPipe = [NSPipe new];
+    NSFileHandle *outputFile = outputPipe.fileHandleForReading;
+
+    NSPipe *errorPipe = [NSPipe new];
+    NSFileHandle *errorFile = errorPipe.fileHandleForReading;
     
     NSArray *args = @[@"-l", @"-c", [NSString stringWithFormat:@"lp -d %@ -n %zd %@", printer.name, quantity, filePath]];
     task.launchPath = @"/bin/bash";
     task.arguments = args;
-    task.standardOutput = pipe;
-    task.standardError = pipe;
+    task.standardOutput = outputPipe;
+    task.standardError = errorPipe;
     [task launch];
     
-    NSData *data = [file readDataToEndOfFile];
-    [file closeFile];
+    NSData *outputData = [outputFile readDataToEndOfFile];
+    [outputFile closeFile];
+    NSString *commandOutput = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
+
+    NSData *errorData = [errorFile readDataToEndOfFile];
+    [errorFile closeFile];
+    NSString *errorOutput = [[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding];
+
+    if (commandOutput.length) {
+        [self.logManager logMessage:@"Printer received job"];
+    } else {
+        [self.logManager logMessage:[NSString stringWithFormat:@"Print failed: - %@", errorOutput]];
+    }
     
-    NSString *commandOutput = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", commandOutput);
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath:filePath error:nil];
 }
 
 @end

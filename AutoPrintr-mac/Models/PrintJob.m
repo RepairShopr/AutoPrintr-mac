@@ -1,9 +1,7 @@
 //
-//  PrintJob.m
 //  AutoPrintr-mac
 //
-//  Created by Cata Haidau on 09/09/16.
-//  Copyright © 2016 Catalin Haidau. All rights reserved.
+//  Copyright © 2016 MIT/RepairShopr. All rights reserved.
 //
 
 #import "PrintJob.h"
@@ -41,6 +39,12 @@
     return [documentsTypes[self.document] integerValue];
 }
 
-
+- (NSString *)description {
+    return [NSString stringWithFormat:@"Job: Document: %@; Document Type: %@; RegisterID: %@; LocationID: %@",
+            self.document,
+            self.documentTypeName,
+            self.registerId,
+            self.locationId];
+}
 
 @end

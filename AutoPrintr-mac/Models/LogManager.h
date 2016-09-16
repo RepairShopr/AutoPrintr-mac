@@ -6,10 +6,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PusherManager : NSObject
+@interface LogManager : NSObject
 
-+ (instancetype)shared;
-
-- (void)startListening;
+- (void)logMessage:(NSString *)message;
+- (void)openLogFile;
 
 @end

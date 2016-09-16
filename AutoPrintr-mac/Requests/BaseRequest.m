@@ -1,8 +1,7 @@
 //
-//  BaseRequest.m
 //  AutoPrintr-mac
 //
-//  Copyright (c) 2016 X2 Mobile. All rights reserved.
+//  Copyright © 2016 MIT/RepairShopr. All rights reserved.
 //
 
 #import "BaseRequest.h"

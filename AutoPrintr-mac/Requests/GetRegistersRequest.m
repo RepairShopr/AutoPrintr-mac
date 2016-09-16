@@ -1,9 +1,7 @@
 //
-//  GetRegistersRequest.m
 //  AutoPrintr-mac
 //
-//  Created by Cata Haidau on 06/09/16.
-//  Copyright © 2016 Catalin Haidau. All rights reserved.
+//  Copyright © 2016 MIT/RepairShopr. All rights reserved.
 //
 
 #import "GetRegistersRequest.h"

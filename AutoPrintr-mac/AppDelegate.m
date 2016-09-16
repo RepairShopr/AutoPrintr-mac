@@ -1,9 +1,7 @@
 //
-//  AppDelegate.m
 //  AutoPrintr-mac
 //
-//  Created by Cata Haidau on 29/08/16.
-//  Copyright © 2016 Catalin Haidau. All rights reserved.
+//  Copyright © 2016 MIT/RepairShopr. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -12,6 +10,7 @@
 #import "LoginViewController.h"
 #import "PusherManager.h"
 #import "DataManager.h"
+#import "LogManager.h"
 #import <ServiceManagement/ServiceManagement.h>
 
 @interface AppDelegate () <LoginDelegate>
@@ -47,6 +46,11 @@
 }
 
 #pragma mark - Buttons Actions
+
+- (IBAction)didClickViewLogsButton:(id)sender {
+    LogManager *logManager = [LogManager new];
+    [logManager openLogFile];
+}
 
 - (IBAction)didClickLoginButton:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];
@@ -145,7 +149,7 @@
     self.logoutItem = [[NSMenuItem alloc] initWithTitle:@"Log out"
                                                  action:@selector(didClickLogoutButton)
                                           keyEquivalent:@""];
-    [self.mainMenu insertItem:self.logoutItem atIndex:2];
+    [self.mainMenu insertItem:self.logoutItem atIndex:self.mainMenu.itemArray.count - 1];
 }
 
 #pragma mark - App Delegate
@@ -156,7 +160,7 @@
     } else {
         NSLog(@"Login Item Was Successful");
     }
-    
+
     self.loginManager = [LoginManager new];
     if ([self.loginManager shouldAutoLogin]) {
         [self.loginManager performAutoLoginWithCompletionBlock:^(BOOL succeed, NSString *errorMessage) {
