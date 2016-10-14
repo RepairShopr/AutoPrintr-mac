@@ -38,6 +38,9 @@
 #pragma mark - Menu
 
 - (void)awakeFromNib {
+//    LogManager *logManager = [LogManager new];
+//    [logManager logMessage:@"Awake from nib called"];
+//    
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     self.statusItem.menu = self.mainMenu;
     self.statusItem.image = [NSImage imageNamed:@"menuItemIcon"];
@@ -155,17 +158,27 @@
 #pragma mark - App Delegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+//    LogManager *logManager = [LogManager new];
+//    [logManager logMessage:@"App started - before"];
+    
     if (!SMLoginItemSetEnabled((__bridge CFStringRef)@"com.x2mobile.AutoPrintrHelper", YES)) {
         NSLog(@"Login Item Was Not Successful");
     } else {
         NSLog(@"Login Item Was Successful");
     }
-
+    [[PusherManager shared] initializeReachability];
+    
+//    [logManager logMessage:@"App started - after"];
+    
     self.loginManager = [LoginManager new];
     if ([self.loginManager shouldAutoLogin]) {
+//        [logManager logMessage:@"Trying autologin -"];
+        
         [self.loginManager performAutoLoginWithCompletionBlock:^(BOOL succeed, NSString *errorMessage) {
             if (succeed) {
                 [self loginDidSucceed];
+            } else {
+//                    [logManager logMessage:[NSString stringWithFormat:@"error login %@ %@", [DataManager shared].loggedInUser.email, [DataManager shared].loggedInUser.password]];
             }
         }];
     }

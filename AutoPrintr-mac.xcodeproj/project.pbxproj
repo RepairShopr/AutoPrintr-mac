@@ -525,9 +525,11 @@
 				TargetAttributes = {
 					A64428E31D74A0130054CFE0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 39446JG6PB;
 					};
 					A6A4862A1D89A0E100B98125 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 39446JG6PB;
 					};
 				};
 			};
@@ -769,11 +771,14 @@
 			baseConfigurationReference = DDFF42781D39084408BF301F /* Pods-AutoPrintr-mac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "AutoPrintr-mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Catalin-Haidau.AutoPrintr-mac";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.x2mobile.AutoPrintr-mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -782,11 +787,14 @@
 			baseConfigurationReference = D922A78609F8070A2D55325F /* Pods-AutoPrintr-mac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application: X2 Mobile Development SRL-D (39446JG6PB)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: X2 Mobile Development SRL-D (39446JG6PB)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "AutoPrintr-mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Catalin-Haidau.AutoPrintr-mac";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.x2mobile.AutoPrintr-mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3bb084a7-f05c-4669-ae29-561af1e06c4c";
 			};
 			name = Release;
 		};
@@ -794,11 +802,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AutoPrintrHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.x2mobile.AutoPrintrHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -807,11 +818,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application: X2 Mobile Development SRL-D (39446JG6PB)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: X2 Mobile Development SRL-D (39446JG6PB)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AutoPrintrHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.x2mobile.AutoPrintrHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a529ea00-e303-4552-a8a1-ea63105abee6";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

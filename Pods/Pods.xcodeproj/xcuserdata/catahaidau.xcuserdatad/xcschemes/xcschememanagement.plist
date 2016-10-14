@@ -8,34 +8,31 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>Pods-AutoPrintr-mac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
+		</dict>
+		<key>Reachability.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SocketRocket.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>libPusher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>272BCFE4154E4E47EDF1BB81254CFD6E</key>
+		<key>28D9AAA7DD1C763CA0A96FBD6254E9A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -51,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>F1CD54B521C05F64664B50B361E42A34</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD72719FF66C281308DEC9D50C73BD6C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -10,6 +10,7 @@
 
 + (instancetype)shared;
 
+- (void)initializeReachability;
 - (void)startListening;
 
 @end

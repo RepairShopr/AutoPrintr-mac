@@ -5,6 +5,7 @@
 //
 
 #import "PusherManager.h"
+#import <Reachability/Reachability.h>
 #import <Pusher/Pusher.h>
 #import "AppKeys.h"
 #import "PrintJob.h"
@@ -13,6 +14,7 @@
 #import "Printer.h"
 
 static NSString * const kPusherEvent = @"print-job";
+static NSString * const kTestingHostname = @"www.google.com";
 
 @interface PusherManager() <PTPusherDelegate>
 @property (strong, nonatomic) PTPusher *client;
@@ -32,6 +34,19 @@ static NSString * const kPusherEvent = @"print-job";
     });
     
     return sharedInstance;
+}
+
+#pragma mark - Reachability
+
+- (void)initializeReachability {
+    Reachability *reach = [Reachability reachabilityWithHostname:kTestingHostname];
+    
+    __weak typeof(self) _weakSelf = self;
+    reach.reachableBlock = ^(Reachability *reach) {
+        [_weakSelf.client connect];
+    };
+    
+    [reach startNotifier];
 }
 
 #pragma mark - Channel Listening
@@ -139,6 +154,12 @@ static NSString * const kPusherEvent = @"print-job";
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     [fileManager removeItemAtPath:filePath error:nil];
+}
+
+#pragma mark - PTPusherDelegate
+
+- (BOOL)pusher:(PTPusher *)pusher connectionWillAutomaticallyReconnect:(PTPusherConnection *)connection afterDelay:(NSTimeInterval)delay {
+    return YES;
 }
 
 @end

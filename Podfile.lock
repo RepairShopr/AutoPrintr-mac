@@ -16,15 +16,18 @@ PODS:
     - libPusher/Core (= 1.6.2)
   - libPusher/Core (1.6.2):
     - SocketRocket (= 0.5.1)
+  - Reachability (3.2)
   - SocketRocket (0.5.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1)
   - libPusher (~> 1.6.2)
+  - Reachability (~> 3.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   libPusher: 21c6209fa84a829e963f1b2fe5bff34722f3f3f4
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
 COCOAPODS: 0.39.0
